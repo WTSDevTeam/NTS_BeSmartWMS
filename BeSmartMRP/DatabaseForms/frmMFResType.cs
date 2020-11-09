@@ -721,6 +721,8 @@ namespace BeSmartMRP.DatabaseForms
             dtrSaveInfo[QMFResTypeInfo.Field.Name] = this.txtName.Text.TrimEnd();
             dtrSaveInfo[QMFResTypeInfo.Field.Name2] = this.txtName2.Text.TrimEnd();
 
+            dtrSaveInfo["CACTIVE"] = "";
+
             this.mSaveDBAgent = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
 			this.mSaveDBAgent.AppID = App.AppID;
 			this.mdbConn = this.mSaveDBAgent.GetDBConnection();

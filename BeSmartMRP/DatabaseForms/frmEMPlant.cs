@@ -783,6 +783,12 @@ namespace BeSmartMRP.DatabaseForms
 
             dtrSaveInfo["CWORKHOUR"] = this.txtQcStdWorkHr.Tag.ToString();
             dtrSaveInfo["CHOLIDAY"] = this.txtQcHoliday.Tag.ToString();
+            dtrSaveInfo["CWORKCAL"] = "";
+            dtrSaveInfo["CACTIVE"] = "";
+            dtrSaveInfo["NCAPACITY"] = 0;
+
+            dtrSaveInfo["CJOB"] = "";
+            dtrSaveInfo["CPROJ"] = "";
 
             this.mSaveDBAgent = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
 			this.mSaveDBAgent.AppID = App.AppID;

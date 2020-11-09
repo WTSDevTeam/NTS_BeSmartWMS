@@ -37,47 +37,47 @@ namespace BeSmartMRP.Data
             //bllResult = bllResult && this.pmUpdate_2009_12_02(objSQLHelper);
             //bllResult = bllResult && this.pmUpdate_2009_12_07(objSQLHelper);
             //bllResult = bllResult && this.pmUpdate_2009_12_14(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_04(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_05(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_07(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_08(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_11(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_12(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_25(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_01_26(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_02_02(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_02_08(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_02_15(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_02_17(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_02_22(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_03_09(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_03_16(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_04_09(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_05_05(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_05_07(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_05_24(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_06_22(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_09_27(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2010_10_26(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2011_07_04(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2012_03_09(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2012_04_26(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2012_05_03(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2012_07_08(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2013_08_21(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2014_07_22(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_04(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_05(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_07(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_08(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_11(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_12(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_25(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_01_26(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_02_02(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_02_08(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_02_15(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_02_17(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_02_22(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_03_09(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_03_16(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_04_09(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_05_05(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_05_07(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_05_24(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_06_22(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_09_27(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2010_10_26(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2011_07_04(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2012_03_09(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2012_04_26(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2012_05_03(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2012_07_08(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2013_08_21(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2014_07_22(objSQLHelper);
             //bllResult = bllResult && this.pmUpdate_2014_08_24(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2014_08_31(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2014_09_03(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2015_04_24(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2015_07_16(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2015_11_27(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2014_08_31(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2014_09_03(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2015_04_24(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2015_07_16(objSQLHelper);
+            bllResult = bllResult && this.pmUpdate_2015_11_27(objSQLHelper);
             bllResult = bllResult && this.pmUpdate_2016_06_06(objSQLHelper);
             bllResult = bllResult && this.pmUpdate_2016_06_15(objSQLHelper);
             bllResult = bllResult && this.pmUpdate_2016_08_19(objSQLHelper);
-            
+
             //
-            
+
             return bllResult;
         }
 

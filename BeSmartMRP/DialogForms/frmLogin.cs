@@ -41,7 +41,8 @@ namespace BeSmartMRP.DialogForms
                     this.lblTitle.Text = "WeBusiness Point of Sale";
                     break;
                 default:
-                    this.lblTitle.Text = "WeBusiness ERP for Enterprise";
+                    //this.lblTitle.Text = "WeBusiness ERP for Enterprise";
+                    this.lblTitle.Text = "ระบุ Username/Password เพื่อเข้าสู่ระบบ";
                     break;
             }
 

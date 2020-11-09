@@ -100,11 +100,11 @@
   <ItemGroup>
     <Reference Include="AppUtil, Version=1.0.7596.30540, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\DiamondFramework\V6\DLL\AppUtil.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\WORK\TFS\DLL\v6\AppUtil.dll</HintPath>
     </Reference>
     <Reference Include="DateTimeUtil, Version=1.0.7596.30540, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\DiamondFramework\V6\DLL\DateTimeUtil.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\WORK\TFS\DLL\v6\DateTimeUtil.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -125,7 +125,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WS.Data, Version=2.0.7596.30541, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\DiamondFramework\V6\DLL\WS.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\WORK\TFS\DLL\v6\WS.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

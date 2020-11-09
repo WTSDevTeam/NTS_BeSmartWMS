@@ -264,11 +264,19 @@ namespace BeSmartMRP
                     ofrmCorp.Activate();
                     break;
                 case "EBRANCH":
-                    DatabaseForms.frmBranch ofrmBranch = BeSmartMRP.DatabaseForms.frmBranch.GetInstanse();
+                    //DatabaseForms.frmBranch ofrmBranch = BeSmartMRP.DatabaseForms.frmBranch.GetInstanse();
+                    DatabaseForms.frmEMPlant ofrmBranch = BeSmartMRP.DatabaseForms.frmEMPlant.GetInstanse();
 
                     ofrmBranch.MdiParent = this;
                     ofrmBranch.Show();
                     ofrmBranch.Activate();
+                    break;
+                case "EPLANT":
+                    DatabaseForms.frmEMPlant ofrmEMPlant = BeSmartMRP.DatabaseForms.frmEMPlant.GetInstanse();
+
+                    ofrmEMPlant.MdiParent = this;
+                    ofrmEMPlant.Show();
+                    ofrmEMPlant.Activate();
                     break;
                 case "EDEPT":
                     DatabaseForms.frmEMDept ofrmDept = BeSmartMRP.DatabaseForms.frmEMDept.GetInstanse();

@@ -1112,6 +1112,7 @@ namespace BeSmartMRP.DatabaseForms
             dtrSaveInfo[QMFResourceInfo.Field.Capacity] = Convert.ToDecimal(this.txtCapacity.Value);
             dtrSaveInfo[QMFResourceInfo.Field.Load_Maximum] = Convert.ToDecimal(this.txtOverLoad.Value);
             dtrSaveInfo[QMFResourceInfo.Field.Load_Minimum] = Convert.ToDecimal(this.txtUnderLoad.Value);
+            dtrSaveInfo["NBUYPRICE"] = 0;
 
             if (this.txtInstall.EditValue != null)
             {
