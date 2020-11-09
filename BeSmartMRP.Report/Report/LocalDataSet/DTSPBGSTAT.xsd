@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSPBGSTAT" targetNamespace="http://tempuri.org/DTSPBGSTAT.xsd" xmlns:mstns="http://tempuri.org/DTSPBGSTAT.xsd" xmlns="http://tempuri.org/DTSPBGSTAT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSPBGSTAT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DTSPBGSTAT" msprop:Generator_UserDSName="DTSPBGSTAT" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XRPBGSTAT" msprop:Generator_UserTableName="XRPBGSTAT" msprop:Generator_RowDeletedName="XRPBGSTATRowDeleted" msprop:Generator_TableClassName="XRPBGSTATDataTable" msprop:Generator_RowChangedName="XRPBGSTATRowChanged" msprop:Generator_RowClassName="XRPBGSTATRow" msprop:Generator_RowChangingName="XRPBGSTATRowChanging" msprop:Generator_RowEvArgName="XRPBGSTATRowChangeEvent" msprop:Generator_RowEvHandlerName="XRPBGSTATRowChangeEventHandler" msprop:Generator_TablePropName="XRPBGSTAT" msprop:Generator_TableVarName="tableXRPBGSTAT" msprop:Generator_RowDeletingName="XRPBGSTATRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cQcJob" msdata:Caption="cName" msprop:Generator_UserColumnName="cQcJob" msprop:Generator_ColumnPropNameInRow="cQcJob" msprop:Generator_ColumnVarNameInTable="columncQcJob" msprop:Generator_ColumnPropNameInTable="cQcJobColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnJob" msdata:Caption="cCateg" msprop:Generator_UserColumnName="cQnJob" msprop:Generator_ColumnPropNameInRow="cQnJob" msprop:Generator_ColumnVarNameInTable="columncQnJob" msprop:Generator_ColumnPropNameInTable="cQnJobColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cLogin1" msdata:Caption="cGroup" msprop:Generator_UserColumnName="cLogin1" msprop:Generator_ColumnPropNameInRow="cLogin1" msprop:Generator_ColumnVarNameInTable="columncLogin1" msprop:Generator_ColumnPropNameInTable="cLogin1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="cStat1" msdata:Caption="nLevel" msprop:Generator_UserColumnName="cStat1" msprop:Generator_ColumnPropNameInRow="cStat1" msprop:Generator_ColumnVarNameInTable="columncStat1" msprop:Generator_ColumnPropNameInTable="cStat1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="dApprove1" msdata:Caption="cQcAcChart" msprop:Generator_UserColumnName="dApprove1" msprop:Generator_ColumnPropNameInRow="dApprove1" msprop:Generator_ColumnVarNameInTable="columndApprove1" msprop:Generator_ColumnPropNameInTable="dApprove1Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cLogin2" msdata:Caption="cQnAcChart" msprop:Generator_UserColumnName="cLogin2" msprop:Generator_ColumnPropNameInRow="cLogin2" msprop:Generator_ColumnVarNameInTable="columncLogin2" msprop:Generator_ColumnPropNameInTable="cLogin2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="cStat2" msdata:Caption="cQcAcChart2" msprop:Generator_UserColumnName="cStat2" msprop:Generator_ColumnPropNameInRow="cStat2" msprop:Generator_ColumnVarNameInTable="columncStat2" msprop:Generator_ColumnPropNameInTable="cStat2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="dApprove2" msprop:Generator_UserColumnName="dApprove2" msprop:Generator_ColumnPropNameInRow="dApprove2" msprop:Generator_ColumnVarNameInTable="columndApprove2" msprop:Generator_ColumnPropNameInTable="dApprove2Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cLogin3" msprop:Generator_UserColumnName="cLogin3" msprop:Generator_ColumnPropNameInRow="cLogin3" msprop:Generator_ColumnVarNameInTable="columncLogin3" msprop:Generator_ColumnPropNameInTable="cLogin3Column" type="xs:string" minOccurs="0" />
+              <xs:element name="cStat3" msprop:Generator_UserColumnName="cStat3" msprop:Generator_ColumnPropNameInRow="cStat3" msprop:Generator_ColumnVarNameInTable="columncStat3" msprop:Generator_ColumnPropNameInTable="cStat3Column" type="xs:string" minOccurs="0" />
+              <xs:element name="dApprove3" msprop:Generator_UserColumnName="dApprove3" msprop:Generator_ColumnPropNameInRow="dApprove3" msprop:Generator_ColumnVarNameInTable="columndApprove3" msprop:Generator_ColumnPropNameInTable="dApprove3Column" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cLogin4" msprop:Generator_UserColumnName="cLogin4" msprop:Generator_ColumnPropNameInRow="cLogin4" msprop:Generator_ColumnVarNameInTable="columncLogin4" msprop:Generator_ColumnPropNameInTable="cLogin4Column" type="xs:string" minOccurs="0" />
+              <xs:element name="cStat4" msprop:Generator_UserColumnName="cStat4" msprop:Generator_ColumnPropNameInRow="cStat4" msprop:Generator_ColumnVarNameInTable="columncStat4" msprop:Generator_ColumnPropNameInTable="cStat4Column" type="xs:string" minOccurs="0" />
+              <xs:element name="dApprove4" msprop:Generator_UserColumnName="dApprove4" msprop:Generator_ColumnPropNameInRow="dApprove4" msprop:Generator_ColumnVarNameInTable="columndApprove4" msprop:Generator_ColumnPropNameInTable="dApprove4Column" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,7 @@
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\bin\BeSmartWebApp.dll.config
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\bin\BeSmartWebApp.dll
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\bin\BeSmartWebApp.pdb
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\obj\Release\BeSmartWebApp.csprojAssemblyReference.cache
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\obj\Release\BeSmartWebApp.csproj.CoreCompileInputs.cache
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\obj\Release\BeSmartWebApp.dll
+F:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\2020\WMS\WTS_BeSmartWMS\BeSmartWebApp\obj\Release\BeSmartWebApp.pdb

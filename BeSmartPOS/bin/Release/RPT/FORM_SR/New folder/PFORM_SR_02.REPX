@@ -1,0 +1,302 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>BeSmartMRP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</AssemblyFullName>
+///   <AssemblyLocation>D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\BeSmartMRP.dll</AssemblyLocation>
+///   <TypeName>BeSmartMRP.Report.RPT.xrPSTK_Template01</TypeName>
+///   <Localization>th-TH</Localization>
+///   <Version>12.2</Version>
+///   <References>
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\BeSmartMRP.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.Utils.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.Utils.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Windows.Forms\2.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Configuration\2.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Xml\2.0.0.0__b77a5c561934e089\System.Xml.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.SqlXml\2.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Security\2.0.0.0__b03f5f7f11d50a3a\System.Security.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Drawing\2.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Accessibility\2.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Runtime.Serialization.Formatters.Soap\2.0.0.0__b03f5f7f11d50a3a\System.Runtime.Serialization.Formatters.Soap.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Deployment\2.0.0.0__b03f5f7f11d50a3a\System.Deployment.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Core\3.5.0.0__b77a5c561934e089\System.Core.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Runtime.Remoting\2.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_32\System.Web\2.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_32\System.Data\2.0.0.0__b77a5c561934e089\System.Data.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.VisualC\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualC.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_32\System.Transactions\2.0.0.0__b77a5c561934e089\System.Transactions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_32\System.EnterpriseServices\2.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.DirectoryServices\2.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Design\2.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Drawing.Design\2.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_32\System.Data.OracleClient\2.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Web.RegularExpressions\2.0.0.0__b03f5f7f11d50a3a\System.Web.RegularExpressions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.DirectoryServices.Protocols\2.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.ServiceProcess\2.0.0.0__b03f5f7f11d50a3a\System.ServiceProcess.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Configuration.Install\2.0.0.0__b03f5f7f11d50a3a\System.Configuration.Install.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraBars.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraBars.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraEditors.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraEditors.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.DataSetExtensions\3.5.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v12.2.Extensions\12.2.4.0__b88d1754d700e49a\DevExpress.XtraReports.v12.2.Extensions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.Utils.v12.2.UI\12.2.4.0__b88d1754d700e49a\DevExpress.Utils.v12.2.UI.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraTreeList.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraTreeList.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraRichEdit.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraRichEdit.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.RichEdit.v12.2.Core\12.2.4.0__b88d1754d700e49a\DevExpress.RichEdit.v12.2.Core.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.Office.v12.2.Core\12.2.4.0__b88d1754d700e49a\DevExpress.Office.v12.2.Core.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraVerticalGrid.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraVerticalGrid.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraPrinting.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraPrinting.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v12.2.Extensions\12.2.4.0__b88d1754d700e49a\DevExpress.XtraCharts.v12.2.Extensions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v12.2.Wizard\12.2.4.0__b88d1754d700e49a\DevExpress.XtraCharts.v12.2.Wizard.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraNavBar.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraNavBar.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraPivotGrid.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraPivotGrid.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.CodeParser.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.CodeParser.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.ServiceModel.Web\3.5.0.0__31bf3856ad364e35\System.ServiceModel.Web.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.ServiceModel\3.0.0.0__b77a5c561934e089\System.ServiceModel.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\SMDiagnostics\3.0.0.0__b77a5c561934e089\SMDiagnostics.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Runtime.Serialization\3.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.IdentityModel\3.0.0.0__b77a5c561934e089\System.IdentityModel.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Messaging\2.0.0.0__b03f5f7f11d50a3a\System.Messaging.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.IdentityModel.Selectors\3.0.0.0__b77a5c561934e089\System.IdentityModel.Selectors.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.Transactions.Bridge\3.0.0.0__b03f5f7f11d50a3a\Microsoft.Transactions.Bridge.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Web.Extensions\3.5.0.0__31bf3856ad364e35\System.Web.Extensions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Web.Abstractions\3.5.0.0__31bf3856ad364e35\System.Web.Abstractions.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.Linq\3.5.0.0__b77a5c561934e089\System.Data.Linq.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Xml.Linq\3.5.0.0__b77a5c561934e089\System.Xml.Linq.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.Services.Client\3.5.0.0__b77a5c561934e089\System.Data.Services.Client.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\WindowsBase\3.0.0.0__31bf3856ad364e35\WindowsBase.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.Services.Design\3.5.0.0__b77a5c561934e089\System.Data.Services.Design.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.Entity\3.5.0.0__b77a5c561934e089\System.Data.Entity.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraGrid.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraGrid.v12.2.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraLayout.v12.2\12.2.4.0__b88d1754d700e49a\DevExpress.XtraLayout.v12.2.dll" />
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\BeSmartMRP.Business.dll" />
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\WS.Data.dll" />
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\DateTimeUtil.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.VisualBasic\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Management\2.0.0.0__b03f5f7f11d50a3a\System.Management.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.JScript\8.0.0.0__b03f5f7f11d50a3a\Microsoft.JScript.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.Vsa\8.0.0.0__b03f5f7f11d50a3a\Microsoft.Vsa.dll" />
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\AppUtil.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.Shared\13.0.2000.0__692fbea5521e1304\CrystalDecisions.Shared.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_32\log4net\1.2.10.0__692fbea5521e1304\log4net.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.Controllers\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.Controllers.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.ReportDefModel\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC\stdole\7.0.3300.0__b03f5f7f11d50a3a\stdole.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.DataDefModel\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.CommonObjectModel\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.CubeDefModel\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.CommLayer\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\BeSmartMRP.Report.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.Windows.Forms\13.0.2000.0__692fbea5521e1304\CrystalDecisions.Windows.Forms.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportSource\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportSource.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.CrystalReports.Engine\13.0.2000.0__692fbea5521e1304\CrystalDecisions.CrystalReports.Engine.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.ClientDoc\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.CommonControls\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.DataSetConversion\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.XmlSerialize\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.ObjectFactory\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportAppServer.Prompting\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportAppServer.Prompting.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC\FlashControlV71\1.0.3187.32366__692fbea5521e1304\FlashControlV71.dll" />
+///     <Reference Path="C:\Windows\assembly\GAC\ShockwaveFlashObjects\1.0.0.0__692fbea5521e1304\ShockwaveFlashObjects.dll" />
+///     <Reference Path="D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartPOS\bin\Debug\BeSmartMRP.Data.dll" />
+///   </References>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class xrPSTK_Template01 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
+        private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
+        private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
+        private DevExpress.XtraReports.UI.DetailBand Detail;
+        private DevExpress.XtraReports.UI.XRLabel label2;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private DevExpress.XtraReports.UI.XRLabel label3;
+        private DevExpress.XtraReports.UI.XRLabel label17;
+        private DevExpress.XtraReports.UI.XRLabel label4;
+        private System.Resources.ResourceManager _resources;
+        public xrPSTK_Template01() {
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    string resourceString = "zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJza" +
+                        "W9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4O" +
+                        "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA";
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label4 = new DevExpress.XtraReports.UI.XRLabel();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // GroupHeader1
+            // 
+            this.GroupHeader1.Dpi = 254F;
+            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("F1050", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeader1.HeightF = 0F;
+            this.GroupHeader1.Name = "GroupHeader1";
+            this.GroupHeader1.RepeatEveryPage = true;
+            // 
+            // PageFooter
+            // 
+            this.PageFooter.Dpi = 254F;
+            this.PageFooter.HeightF = 10F;
+            this.PageFooter.Name = "PageFooter";
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.Dpi = 254F;
+            this.BottomMargin.HeightF = 0F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.Dpi = 254F;
+            this.GroupFooter1.HeightF = 0F;
+            this.GroupFooter1.Name = "GroupFooter1";
+            // 
+            // TopMargin
+            // 
+            this.TopMargin.Dpi = 254F;
+            this.TopMargin.HeightF = 0F;
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Detail
+            // 
+            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label2,
+                        this.label1,
+                        this.label3,
+                        this.label17,
+                        this.label4});
+            this.Detail.Dpi = 254F;
+            this.Detail.HeightF = 1250F;
+            this.Detail.Name = "Detail";
+            this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.Detail.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // label2
+            // 
+            this.label2.Angle = 270F;
+            this.label2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "FORMOBJ.I2221")});
+            this.label2.Dpi = 254F;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(25F, 661.2468F);
+            this.label2.Name = "label2";
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label2.SizeF = new System.Drawing.SizeF(67.69118F, 156.3157F);
+            this.label2.StylePriority.UseFont = false;
+            this.label2.StylePriority.UseTextAlignment = false;
+            this.label2.Text = "label2";
+            this.label2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.Angle = 270F;
+            this.label1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "FORMOBJ.I2220")});
+            this.label1.Dpi = 254F;
+            this.label1.Font = new System.Drawing.Font("DilleniaUPC", 27F);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(45.42649F, 100.8592F);
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label1.SizeF = new System.Drawing.SizeF(116.4167F, 516.149F);
+            this.label1.StylePriority.UseFont = false;
+            this.label1.StylePriority.UseTextAlignment = false;
+            this.label1.Text = "label1";
+            this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label3
+            // 
+            this.label3.Angle = 270F;
+            this.label3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "FORMOBJ.I2042", "{0:n0}")});
+            this.label3.Dpi = 254F;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(25F, 817.5625F);
+            this.label3.Name = "label3";
+            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label3.SizeF = new System.Drawing.SizeF(67.69116F, 224.3666F);
+            this.label3.StylePriority.UseFont = false;
+            this.label3.StylePriority.UseTextAlignment = false;
+            this.label3.Text = "label3";
+            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label17
+            // 
+            this.label17.Angle = 270F;
+            this.label17.CanGrow = false;
+            this.label17.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "FORMOBJ.F1040", "{0:dd/MM/yy}")});
+            this.label17.Dpi = 254F;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label17.LocationFloat = new DevExpress.Utils.PointFloat(487.1935F, 939.0594F);
+            this.label17.Name = "label17";
+            this.label17.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label17.SizeF = new System.Drawing.SizeF(78.31604F, 211.8784F);
+            this.label17.StylePriority.UseFont = false;
+            this.label17.StylePriority.UseTextAlignment = false;
+            this.label17.Text = "label17";
+            this.label17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.label17.WordWrap = false;
+            // 
+            // label4
+            // 
+            this.label4.Angle = 270F;
+            this.label4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "FORMOBJ.F1043")});
+            this.label4.Dpi = 254F;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(413.11F, 939.0594F);
+            this.label4.Name = "label4";
+            this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label4.SizeF = new System.Drawing.SizeF(74.0835F, 211.8784F);
+            this.label4.StylePriority.UseFont = false;
+            this.label4.StylePriority.UseTextAlignment = false;
+            this.label4.Text = "label4";
+            this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrPSTK_Template01
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.Detail,
+                        this.TopMargin,
+                        this.BottomMargin,
+                        this.GroupHeader1,
+                        this.PageFooter,
+                        this.GroupFooter1});
+            this.DataMember = "FORMOBJ";
+            this.Dpi = 254F;
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            this.Name = "xrPSTK_Template01";
+            this.PageHeight = 1300;
+            this.PageWidth = 600;
+            this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+            this.PrinterName = "EPSON TM-U220 Receipt";
+            this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+            this.SnapGridSize = 31.75F;
+            this.Version = "12.2";
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}

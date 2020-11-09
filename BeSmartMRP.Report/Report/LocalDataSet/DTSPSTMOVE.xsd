@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSPSTMOVE" targetNamespace="http://tempuri.org/DTSPSTMOVE.xsd" xmlns:mstns="http://tempuri.org/DTSPSTMOVE.xsd" xmlns="http://tempuri.org/DTSPSTMOVE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSPSTMOVE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DTSPSTMOVE" msprop:Generator_DataSetName="DTSPSTMOVE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XRPSTMOVE" msprop:Generator_UserTableName="XRPSTMOVE" msprop:Generator_RowDeletedName="XRPSTMOVERowDeleted" msprop:Generator_RowChangedName="XRPSTMOVERowChanged" msprop:Generator_RowClassName="XRPSTMOVERow" msprop:Generator_RowChangingName="XRPSTMOVERowChanging" msprop:Generator_RowEvArgName="XRPSTMOVERowChangeEvent" msprop:Generator_RowEvHandlerName="XRPSTMOVERowChangeEventHandler" msprop:Generator_TableClassName="XRPSTMOVEDataTable" msprop:Generator_TableVarName="tableXRPSTMOVE" msprop:Generator_RowDeletingName="XRPSTMOVERowDeleting" msprop:Generator_TablePropName="XRPSTMOVE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cQcCrGrp" msdata:Caption="cName2" msprop:Generator_UserColumnName="cQcCrGrp" msprop:Generator_ColumnPropNameInRow="cQcCrGrp" msprop:Generator_ColumnVarNameInTable="columncQcCrGrp" msprop:Generator_ColumnPropNameInTable="cQcCrGrpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnCrGrp" msdata:Caption="cCateg" msprop:Generator_UserColumnName="cQnCrGrp" msprop:Generator_ColumnPropNameInRow="cQnCrGrp" msprop:Generator_ColumnVarNameInTable="columncQnCrGrp" msprop:Generator_ColumnPropNameInTable="cQnCrGrpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQcPdGrp" msdata:Caption="cGroup" msprop:Generator_UserColumnName="cQcPdGrp" msprop:Generator_ColumnPropNameInRow="cQcPdGrp" msprop:Generator_ColumnVarNameInTable="columncQcPdGrp" msprop:Generator_ColumnPropNameInTable="cQcPdGrpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnPdGrp" msdata:Caption="cQcAcChart" msprop:Generator_UserColumnName="cQnPdGrp" msprop:Generator_ColumnPropNameInRow="cQnPdGrp" msprop:Generator_ColumnVarNameInTable="columncQnPdGrp" msprop:Generator_ColumnPropNameInTable="cQnPdGrpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQcPdType" msdata:Caption="cQnAcChart" msprop:Generator_UserColumnName="cQcPdType" msprop:Generator_ColumnPropNameInRow="cQcPdType" msprop:Generator_ColumnVarNameInTable="columncQcPdType" msprop:Generator_ColumnPropNameInTable="cQcPdTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnPdType" msprop:Generator_UserColumnName="cQnPdType" msprop:Generator_ColumnPropNameInRow="cQnPdType" msprop:Generator_ColumnVarNameInTable="columncQnPdType" msprop:Generator_ColumnPropNameInTable="cQnPdTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQcProd" msprop:Generator_UserColumnName="cQcProd" msprop:Generator_ColumnPropNameInRow="cQcProd" msprop:Generator_ColumnVarNameInTable="columncQcProd" msprop:Generator_ColumnPropNameInTable="cQcProdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnProd" msprop:Generator_UserColumnName="cQnProd" msprop:Generator_ColumnPropNameInRow="cQnProd" msprop:Generator_ColumnVarNameInTable="columncQnProd" msprop:Generator_ColumnPropNameInTable="cQnProdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="nStdPrice" msprop:Generator_UserColumnName="nStdPrice" msprop:Generator_ColumnPropNameInRow="nStdPrice" msprop:Generator_ColumnVarNameInTable="columnnStdPrice" msprop:Generator_ColumnPropNameInTable="nStdPriceColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="cQcUM" msprop:Generator_UserColumnName="cQcUM" msprop:Generator_ColumnPropNameInRow="cQcUM" msprop:Generator_ColumnVarNameInTable="columncQcUM" msprop:Generator_ColumnPropNameInTable="cQcUMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnUM" msprop:Generator_UserColumnName="cQnUM" msprop:Generator_ColumnPropNameInRow="cQnUM" msprop:Generator_ColumnVarNameInTable="columncQnUM" msprop:Generator_ColumnPropNameInTable="cQnUMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="nBFQty" msprop:Generator_UserColumnName="nBFQty" msprop:Generator_ColumnVarNameInTable="columnnBFQty" msprop:Generator_ColumnPropNameInRow="nBFQty" msprop:Generator_ColumnPropNameInTable="nBFQtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nBFAmt" msdata:Caption="cVatIsOut" msprop:Generator_UserColumnName="nBFAmt" msprop:Generator_ColumnPropNameInRow="nBFAmt" msprop:Generator_ColumnVarNameInTable="columnnBFAmt" msprop:Generator_ColumnPropNameInTable="nBFAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nQty_IN" msprop:Generator_UserColumnName="nQty_IN" msprop:Generator_ColumnPropNameInRow="nQty_IN" msprop:Generator_ColumnVarNameInTable="columnnQty_IN" msprop:Generator_ColumnPropNameInTable="nQty_INColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nQty_Out" msprop:Generator_UserColumnName="nQty_Out" msprop:Generator_ColumnPropNameInRow="nQty_Out" msprop:Generator_ColumnVarNameInTable="columnnQty_Out" msprop:Generator_ColumnPropNameInTable="nQty_OutColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nQty_Ret" msprop:Generator_UserColumnName="nQty_Ret" msprop:Generator_ColumnVarNameInTable="columnnQty_Ret" msprop:Generator_ColumnPropNameInRow="nQty_Ret" msprop:Generator_ColumnPropNameInTable="nQty_RetColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nAmt_IN" msprop:Generator_UserColumnName="nAmt_IN" msprop:Generator_ColumnVarNameInTable="columnnAmt_IN" msprop:Generator_ColumnPropNameInRow="nAmt_IN" msprop:Generator_ColumnPropNameInTable="nAmt_INColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nAmt_Out" msprop:Generator_UserColumnName="nAmt_Out" msprop:Generator_ColumnVarNameInTable="columnnAmt_Out" msprop:Generator_ColumnPropNameInRow="nAmt_Out" msprop:Generator_ColumnPropNameInTable="nAmt_OutColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nAmt_Ret" msprop:Generator_UserColumnName="nAmt_Ret" msprop:Generator_ColumnVarNameInTable="columnnAmt_Ret" msprop:Generator_ColumnPropNameInRow="nAmt_Ret" msprop:Generator_ColumnPropNameInTable="nAmt_RetColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cCtrlStock" msprop:Generator_UserColumnName="cCtrlStock" msprop:Generator_ColumnPropNameInRow="cCtrlStock" msprop:Generator_ColumnVarNameInTable="columncCtrlStock" msprop:Generator_ColumnPropNameInTable="cCtrlStockColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQcAcChart" msprop:Generator_UserColumnName="cQcAcChart" msprop:Generator_ColumnPropNameInRow="cQcAcChart" msprop:Generator_ColumnVarNameInTable="columncQcAcChart" msprop:Generator_ColumnPropNameInTable="cQcAcChartColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnAcChart" msprop:Generator_UserColumnName="cQnAcChart" msprop:Generator_ColumnPropNameInRow="cQnAcChart" msprop:Generator_ColumnVarNameInTable="columncQnAcChart" msprop:Generator_ColumnPropNameInTable="cQnAcChartColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQcAcChart2" msprop:Generator_UserColumnName="cQcAcChart2" msprop:Generator_ColumnPropNameInRow="cQcAcChart2" msprop:Generator_ColumnVarNameInTable="columncQcAcChart2" msprop:Generator_ColumnPropNameInTable="cQcAcChart2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnAcChart2" msprop:Generator_UserColumnName="cQnAcChart2" msprop:Generator_ColumnPropNameInRow="cQnAcChart2" msprop:Generator_ColumnVarNameInTable="columncQnAcChart2" msprop:Generator_ColumnPropNameInTable="cQnAcChart2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="nQty" msprop:Generator_UserColumnName="nQty" msprop:Generator_ColumnPropNameInRow="nQty" msprop:Generator_ColumnVarNameInTable="columnnQty" msprop:Generator_ColumnPropNameInTable="nQtyColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="nSaleQty" msprop:Generator_UserColumnName="nSaleQty" msprop:Generator_ColumnPropNameInRow="nSaleQty" msprop:Generator_ColumnVarNameInTable="columnnSaleQty" msprop:Generator_ColumnPropNameInTable="nSaleQtyColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="cRemark" msprop:Generator_UserColumnName="cRemark" msprop:Generator_ColumnPropNameInRow="cRemark" msprop:Generator_ColumnVarNameInTable="columncRemark" msprop:Generator_ColumnPropNameInTable="cRemarkColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

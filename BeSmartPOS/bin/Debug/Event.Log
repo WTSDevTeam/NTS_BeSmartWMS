@@ -1,0 +1,1076 @@
+
+21/มิถุนายน/2558 16:46:46
+Exception Message :
+The statement has been terminated.
+Cannot insert the value NULL into column 'CACTIVE', table 'WBS2.dbo.APPLOGIN'; column does not allow nulls. INSERT fails.
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans) in D:\WORK\CSHARP\DevRoom\DiamondFramework\V4\WS.Data\Agents\cDBMSAgent.cs:line 480
+   at BeSmartMRP.DatabaseForms.frmAppLogin.pmUpdateRecord() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmAppLogin.cs:line 662
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+21/มิถุนายน/2558 17:07:21
+Exception Message :
+The statement has been terminated.
+Cannot insert the value NULL into column 'CHPWD', table 'WBS2.dbo.APPLOGIN'; column does not allow nulls. INSERT fails.
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans) in D:\WORK\CSHARP\DevRoom\DiamondFramework\V4\WS.Data\Agents\cDBMSAgent.cs:line 480
+   at BeSmartMRP.DatabaseForms.frmAppLogin.pmUpdateRecord() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmAppLogin.cs:line 663
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+21/มิถุนายน/2558 17:56:50
+Exception Message :
+Input string was not in a correct format.Couldn't store <> in NSTATUS Column.  Expected type is Decimal.
+Exception StackTrace :
+   at System.Data.DataColumn.set_Item(Int32 record, Object value)
+   at System.Data.DataRow.set_Item(DataColumn column, Object value)
+   at System.Data.DataRow.set_Item(String columnName, Object value)
+   at BeSmartMRP.DatabaseForms.frmAppLogin.pmUpdateRecord() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmAppLogin.cs:line 622
+   at BeSmartMRP.DatabaseForms.frmAppLogin.pmSaveData() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmAppLogin.cs:line 466
+   at BeSmartMRP.DatabaseForms.frmAppLogin.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmAppLogin.cs:line 339
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+23/มิถุนายน/2558 05:14:53
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1214
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1102
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 775
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.PerformClick()
+   at System.Windows.Forms.Form.ProcessDialogKey(Keys keyData)
+   at System.Windows.Forms.Control.ProcessDialogKey(Keys keyData)
+   at System.Windows.Forms.Control.PreProcessMessage(Message& msg)
+   at System.Windows.Forms.Control.PreProcessControlMessageInternal(Control target, Message& msg)
+   at System.Windows.Forms.Application.ThreadContext.PreTranslateMessage(MSG& msg)
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+30/มิถุนายน/2558 07:48:06
+Exception Message :
+The statement has been terminated.
+Cannot insert duplicate key row in object 'dbo.BOOK' with unique index 'FMBOOKCOBRTYCODE'. The duplicate key value is (nEU้(((), nEU๕(((), SR, 0001).
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans) in D:\WORK\CSHARP\DevRoom\DiamondFramework\V4\WS.Data\Agents\cDBMSAgent.cs:line 480
+   at BeSmartMRP.DatabaseForms.frmFMBook.pmUpdateRecord() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmFMBook.cs:line 686
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+02/ธันวาคม/2558 12:30:15
+Exception Message :
+The statement has been terminated.
+Cannot insert duplicate key row in object 'dbo.BOOK' with unique index 'FMBOOKCOBRTYCODE'. The duplicate key value is (nEU้(((), pฒK](((), SR, B06 ).
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans) in D:\WORK\CSHARP\DevRoom\DiamondFramework\V4\WS.Data\Agents\cDBMSAgent.cs:line 480
+   at BeSmartMRP.DatabaseForms.frmFMBook.pmUpdateRecord() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmFMBook.cs:line 784
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+02/ธันวาคม/2558 12:51:20
+Exception Message :
+The statement has been terminated.
+Cannot insert the value NULL into column 'CACTIVE', table 'WBS.dbo.APPLOGIN'; column does not allow nulls. INSERT fails.
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans) in D:\WORK\CSHARP\DevRoom\DiamondFramework\V4\WS.Data\Agents\cDBMSAgent.cs:line 480
+   at BeSmartMRP.DatabaseForms.frmAppEmpl.pmUpdateRecord() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\DatabaseForms\frmAppEmpl.cs:line 762
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+11/ธันวาคม/2558 06:45:05
+Exception Message :
+Invalid column name 'FCVOIDMSG'.
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans) in D:\WORK\CSHARP\DevRoom\DiamondFramework\V4\WS.Data\Agents\cDBMSAgent.cs:line 480
+   at BeSmartMRP.Transaction.frmInvPOS1.pmCancelData() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4341
+OS : Microsoft Windows NT 6.1.7601 Service Pack 1
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+09/พฤษภาคม/2559 07:27:11
+Exception Message :
+The statement has been terminated.
+String or binary data would be truncated.
+Exception StackTrace :
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   at WS.Data.Agents.cDBMSAgent.BatchSQLExec(String tstrinSQLStr, Object[] inPara, String& ioErrorMsg, IDbConnection inDBConn, IDbTransaction inDBTrans)
+   at BeSmartMRP.Transaction.frmInvPOS1.pmReplRecord(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5105
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+15/พฤษภาคม/2559 16:20:47
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4483
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4200
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3631
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4780
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3486
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:46:09
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSavePOSPayment(DataRow inTemPd, DataRow& ioRefProd) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5934
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveTransPayment(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5861
+   at BeSmartMRP.Transaction.frmInvPOS1.pmReplRecord(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5266
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:47:05
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSavePOSPayment(DataRow inTemPd, DataRow& ioRefProd) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5934
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveTransPayment(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5861
+   at BeSmartMRP.Transaction.frmInvPOS1.pmReplRecord(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5266
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:48:44
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSavePOSPayment(DataRow inTemPd, DataRow& ioRefProd) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5934
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveTransPayment(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5861
+   at BeSmartMRP.Transaction.frmInvPOS1.pmReplRecord(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5266
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:50:24
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSavePOSPayment(DataRow inTemPd, DataRow& ioRefProd) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5934
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveTransPayment(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5861
+   at BeSmartMRP.Transaction.frmInvPOS1.pmReplRecord(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5266
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:50:36
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:51:55
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSavePOSPayment(DataRow inTemPd, DataRow& ioRefProd) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5934
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveTransPayment(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5861
+   at BeSmartMRP.Transaction.frmInvPOS1.pmReplRecord(String& ioErrorMsg) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 5266
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:52:02
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.OnShortcutItemClick(BarItem item, BarShortcut shortcut)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.CheckShortcut(BarManager manager, KeyEventArgs e)
+   at DevExpress.XtraBars.MessageFilter.BarManagerHook.PreFilterMessage(Message& m)
+   at DevExpress.XtraBars.MessageFilter.BarManagerMessageFilter.System.Windows.Forms.IMessageFilter.PreFilterMessage(Message& m)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:56:13
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.OnShortcutItemClick(BarItem item, BarShortcut shortcut)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.CheckShortcut(BarManager manager, KeyEventArgs e)
+   at DevExpress.XtraBars.MessageFilter.BarManagerHook.PreFilterMessage(Message& m)
+   at DevExpress.XtraBars.MessageFilter.BarManagerMessageFilter.System.Windows.Forms.IMessageFilter.PreFilterMessage(Message& m)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:58:00
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 08:58:23
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 09:03:40
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/พฤษภาคม/2559 09:03:57
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at DevExpress.XtraBars.Controls.DockedBarControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+17/พฤษภาคม/2559 08:58:18
+Exception Message :
+The RPC server is unavailable
+Exception StackTrace :
+   at System.Drawing.Printing.StandardPrintController.OnStartPrint(PrintDocument document, PrintEventArgs e)
+   at System.Drawing.Printing.PrintController.Print(PrintDocument document)
+   at System.Drawing.Printing.PrintDocument.Print()
+   at DevExpress.XtraPrinting.PrintingSystemBase.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.PrintDocument(PrintDocument pd)
+   at DevExpress.XtraPrinting.Native.PrintingSystemExtender.Print(String printerName)
+   at DevExpress.XtraPrinting.PrintTool.Print()
+   at BeSmartMRP.frmDXPreviewReport.PrintData(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\frmDXPreviewReport.cs:line 45
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPreviewReport2(DataSet inData, String inRPTFileName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4542
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintRangeData(String inBegCode, String inEndCode, String inRPTFileName, Boolean inToPrinter, Boolean isReprint) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4259
+   at BeSmartMRP.Transaction.frmInvPOS1.pmPrintData2(String inCode) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3685
+   at BeSmartMRP.Transaction.frmInvPOS1.pmSaveData(Boolean inbllIsHold) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 4861
+   at BeSmartMRP.Transaction.frmInvPOS1.barMainEdit_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 3540
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarBaseButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.OnShortcutItemClick(BarItem item, BarShortcut shortcut)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.CheckShortcut(BarManager manager, KeyEventArgs e)
+   at DevExpress.XtraBars.MessageFilter.BarManagerHook.PreFilterMessage(Message& m)
+   at DevExpress.XtraBars.MessageFilter.BarManagerMessageFilter.System.Windows.Forms.IMessageFilter.PreFilterMessage(Message& m)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+17/พฤษภาคม/2559 10:06:20
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+17/พฤษภาคม/2559 10:06:20
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+17/พฤษภาคม/2559 10:06:20
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+26/พฤษภาคม/2559 07:15:30
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1716
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData2() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1553
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 995
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+06/มิถุนายน/2559 06:01:56
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1946
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1449
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1020
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+06/มิถุนายน/2559 06:04:23
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+06/มิถุนายน/2559 06:04:23
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+06/มิถุนายน/2559 06:04:23
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/มิถุนายน/2559 01:01:17
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.frmXRVATSale.pmPreviewReport(DataSet inData) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\frmXRVATSale.cs:line 506
+   at BeSmartMRP.Report.frmXRVATSale.pmPrintData() in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\frmXRVATSale.cs:line 474
+   at BeSmartMRP.Report.frmXRVATSale.btnPrint_Click(Object sender, EventArgs e) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\frmXRVATSale.cs:line 355
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/มิถุนายน/2559 02:28:00
+Exception Message :
+Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.DataDefModel.FieldsClass.get_Item(Int32 Index)
+   at CrystalDecisions.CrystalReports.Engine.ParameterFieldDefinitions.get_Item(Int32 index)
+   at CrystalDecisions.CrystalReports.Engine.ParameterFieldDefinitions.get_Item(String fieldName)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 2031
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData() in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1449
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1020
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/มิถุนายน/2559 02:29:03
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1966
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData2() in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1667
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1014
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+16/มิถุนายน/2559 02:29:37
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1966
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData() in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1449
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1020
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+21/มิถุนายน/2559 10:02:39
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+21/มิถุนายน/2559 13:37:18
+Exception Message :
+โหลดรายงานไม่สำเร็จ
+Exception StackTrace :
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.EnsureDocumentIsOpened()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename, OpenReportMethod openMethod, Int16 parentJob)
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Load(String filename)
+   at BeSmartMRP.Report.XRSTCARD01.pmPreviewReport(DataSet inData) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 2112
+   at BeSmartMRP.Report.XRSTCARD01.pmPrintData() in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1468
+   at BeSmartMRP.Report.XRSTCARD01.btnPrint_Click(Object sender, EventArgs e) in d:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\BeSmartWMS\BeSmartMRP\Report\XRSTCARD01.cs:line 1037
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnClick(EventArgs e)
+   at DevExpress.XtraEditors.BaseButton.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.Utils.Controls.ControlBase.WndProc(Message& m)
+   at DevExpress.XtraEditors.BaseControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+22/มิถุนายน/2559 06:08:29
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+22/มิถุนายน/2559 06:08:36
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+22/มิถุนายน/2559 06:13:54
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+22/มิถุนายน/2559 13:50:13
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at CrystalDecisions.Windows.Forms.PageControl.OnMouseMove(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseMove(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   at System.Windows.Forms.UserControl.WndProc(Message& m)
+   at CrystalDecisions.Windows.Forms.PageControl.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : LENOVO
+Machine Name : DEVMAN072
+
+19/สิงหาคม/2559 06:52:33
+Log Message :ErrorMsg: 
+
+19/สิงหาคม/2559 07:32:53
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 07:38:53
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 09:21:09
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 09:49:12
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS
+
+19/สิงหาคม/2559 09:49:12
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 09:49:12
+Log Message :ImportGLRef : File- D:\Share\WBS\7906f191-f821-4843-a075-6b489dbe9b09.xml
+
+19/สิงหาคม/2559 09:51:44
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 09:51:44
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 09:51:44
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\3a12f133-f3e6-4b18-9355-391d7e14933a.xml
+
+19/สิงหาคม/2559 09:51:45
+Log Message :ImportGLRef : Error - ไม่พบคลังรหัส HP         !
+
+19/สิงหาคม/2559 09:52:47
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 09:52:47
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 09:52:47
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\3a12f133-f3e6-4b18-9355-391d7e14933a.XML
+
+19/สิงหาคม/2559 09:53:23
+Log Message :ImportGLRef : Error - ไม่พบคลังรหัส HP         !
+
+19/สิงหาคม/2559 10:04:30
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 10:05:33
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:05:33
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:05:33
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\ef36c98d-25ca-4881-a15d-4d1467359a79.xml
+
+19/สิงหาคม/2559 10:14:58
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 10:15:52
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:15:52
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:15:52
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\d9370c10-a8fe-46b7-a630-4ca44cd0cb82.xml
+
+19/สิงหาคม/2559 10:15:54
+Log Message :ImportGLRef : Error - ไม่พบคลังรหัส  !
+
+19/สิงหาคม/2559 10:16:23
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:16:23
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:16:23
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\d9370c10-a8fe-46b7-a630-4ca44cd0cb82.XML
+
+19/สิงหาคม/2559 10:18:47
+Log Message :ImportGLRef : Error - ไม่พบคลังรหัส  !
+
+19/สิงหาคม/2559 10:18:51
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:18:51
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:19:06
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:19:06
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:19:06
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\d9370c10-a8fe-46b7-a630-4ca44cd0cb82.XML
+
+19/สิงหาคม/2559 10:30:26
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 10:30:38
+Log Message :Complete : SyncInvoice
+
+19/สิงหาคม/2559 10:31:27
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:31:27
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:31:27
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\c544a357-2de4-497e-af28-b78c21e0c801.xml
+
+19/สิงหาคม/2559 10:32:43
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:32:43
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:32:43
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\c544a357-2de4-497e-af28-b78c21e0c801.XML
+
+19/สิงหาคม/2559 10:35:11
+Log Message :ImportGLRef : Start Create Dir : D:\Share\WBS\ST01
+
+19/สิงหาคม/2559 10:35:11
+Log Message :ImportGLRef : Finish Create Dir
+
+19/สิงหาคม/2559 10:35:11
+Log Message :ImportGLRef : File- D:\Share\WBS\ST01\c544a357-2de4-497e-af28-b78c21e0c801.XML
+
+09/ตุลาคม/2559 06:01:53
+Exception Message :
+Object reference not set to an instance of an object.
+Exception StackTrace :
+   at BeSmartMRP.Transaction.frmInvPOS1.pmCalcColWidth() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\2016\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 792
+   at BeSmartMRP.Transaction.frmInvPOS1.frmInvPOS1_Resize(Object sender, EventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\2016\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 835
+   at System.EventHandler.Invoke(Object sender, EventArgs e)
+   at System.Windows.Forms.Control.OnResize(EventArgs e)
+   at System.Windows.Forms.Form.OnResize(EventArgs e)
+   at System.Windows.Forms.Control.OnSizeChanged(EventArgs e)
+   at DevExpress.XtraEditors.XtraForm.OnSizeChanged(EventArgs e)
+   at System.Windows.Forms.Control.UpdateBounds(Int32 x, Int32 y, Int32 width, Int32 height, Int32 clientWidth, Int32 clientHeight)
+   at System.Windows.Forms.Control.UpdateBounds(Int32 x, Int32 y, Int32 width, Int32 height)
+   at System.Windows.Forms.Control.SetBoundsCore(Int32 x, Int32 y, Int32 width, Int32 height, BoundsSpecified specified)
+   at System.Windows.Forms.Form.SetBoundsCore(Int32 x, Int32 y, Int32 width, Int32 height, BoundsSpecified specified)
+   at DevExpress.XtraEditors.XtraForm.SetBoundsCore(Int32 x, Int32 y, Int32 width, Int32 height, BoundsSpecified specified)
+   at System.Windows.Forms.Control.ScaleControl(SizeF factor, BoundsSpecified specified)
+   at System.Windows.Forms.ScrollableControl.ScaleControl(SizeF factor, BoundsSpecified specified)
+   at System.Windows.Forms.Form.ScaleControl(SizeF factor, BoundsSpecified specified)
+   at DevExpress.XtraEditors.XtraForm.ScaleControl(SizeF factor, BoundsSpecified specified)
+   at System.Windows.Forms.Control.ScaleControl(SizeF includedFactor, SizeF excludedFactor, Control requestingControl)
+   at System.Windows.Forms.ContainerControl.Scale(SizeF includedFactor, SizeF excludedFactor, Control requestingControl)
+   at System.Windows.Forms.ContainerControl.PerformAutoScale(Boolean includedBounds, Boolean excludedBounds)
+   at System.Windows.Forms.ContainerControl.PerformNeededAutoScaleOnLayout()
+   at System.Windows.Forms.ContainerControl.OnLayoutResuming(Boolean performLayout)
+   at System.Windows.Forms.Control.ResumeLayout(Boolean performLayout)
+   at DevExpress.XtraEditors.XtraForm.ResumeLayout(Boolean performLayout)
+   at BeSmartMRP.Transaction.frmInvPOS1.InitializeComponent() in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\2016\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.Designer.cs:line 1646
+   at BeSmartMRP.Transaction.frmInvPOS1..ctor(String inRefType) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\2016\BeSmartWMS\BeSmartMRP\Transaction\frmInvPOS1.cs:line 228
+   at BeSmartMRP.frmMainMenuPOS1.pmRunMenuInput1(String inTag, String inMenuName) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\2016\BeSmartWMS\BeSmartMRP\frmMainMenuPOS1.cs:line 481
+   at BeSmartMRP.frmMainMenuPOS1.barManager1_ItemClick(Object sender, ItemClickEventArgs e) in D:\WORK\CSHARP\DevRoom\DiamondSoft.Project\OnDev\v4\NUT\2016\BeSmartWMS\BeSmartMRP\frmMainMenuPOS1.cs:line 193
+   at DevExpress.XtraBars.BarManager.RaiseItemClick(ItemClickEventArgs e)
+   at DevExpress.XtraBars.BarItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarButtonItem.OnClick(BarItemLink link)
+   at DevExpress.XtraBars.BarItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkClick()
+   at DevExpress.XtraBars.BarItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarButtonItemLink.OnLinkAction(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.BarItemLink.OnLinkActionCore(BarLinkAction action, Object actionArgs)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.ClickLink(BarItemLink link)
+   at DevExpress.XtraBars.ViewInfo.BarSelectionInfo.UnPressLink(BarItemLink link)
+   at DevExpress.XtraBars.Controls.CustomLinksControl.OnMouseUp(MouseEventArgs e)
+   at DevExpress.XtraBars.Controls.CustomPopupBarControl.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevExpress.XtraBars.Controls.CustomControl.WndProc(Message& msg)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+OS : Microsoft Windows NT 6.2.9200.0
+User Name : HP-User
+Machine Name : DEVMANNEXT

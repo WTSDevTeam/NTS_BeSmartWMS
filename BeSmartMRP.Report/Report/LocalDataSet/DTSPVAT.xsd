@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSPVAT" targetNamespace="http://tempuri.org/DTSPVAT.xsd" xmlns:mstns="http://tempuri.org/DTSPVAT.xsd" xmlns="http://tempuri.org/DTSPVAT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSPVAT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DTSPVAT" msprop:Generator_UserDSName="DTSPVAT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XRPVAT" msprop:Generator_TableClassName="XRPVATDataTable" msprop:Generator_TableVarName="tableXRPVAT" msprop:Generator_RowChangedName="XRPVATRowChanged" msprop:Generator_TablePropName="XRPVAT" msprop:Generator_RowDeletingName="XRPVATRowDeleting" msprop:Generator_RowChangingName="XRPVATRowChanging" msprop:Generator_RowEvHandlerName="XRPVATRowChangeEventHandler" msprop:Generator_RowDeletedName="XRPVATRowDeleted" msprop:Generator_RowClassName="XRPVATRow" msprop:Generator_UserTableName="XRPVAT" msprop:Generator_RowEvArgName="XRPVATRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CSTAT" msprop:Generator_ColumnVarNameInTable="columnCSTAT" msprop:Generator_ColumnPropNameInRow="CSTAT" msprop:Generator_ColumnPropNameInTable="CSTATColumn" msprop:Generator_UserColumnName="CSTAT" type="xs:string" minOccurs="0" />
+              <xs:element name="CVATTYPE" msprop:Generator_ColumnVarNameInTable="columnCVATTYPE" msprop:Generator_ColumnPropNameInRow="CVATTYPE" msprop:Generator_ColumnPropNameInTable="CVATTYPEColumn" msprop:Generator_UserColumnName="CVATTYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="DDATE" msprop:Generator_ColumnVarNameInTable="columnDDATE" msprop:Generator_ColumnPropNameInRow="DDATE" msprop:Generator_ColumnPropNameInTable="DDATEColumn" msprop:Generator_UserColumnName="DDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CREFTYPE" msprop:Generator_ColumnVarNameInTable="columnCREFTYPE" msprop:Generator_ColumnPropNameInRow="CREFTYPE" msprop:Generator_ColumnPropNameInTable="CREFTYPEColumn" msprop:Generator_UserColumnName="CREFTYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="CRUNCODE" msprop:Generator_ColumnVarNameInTable="columnCRUNCODE" msprop:Generator_ColumnPropNameInRow="CRUNCODE" msprop:Generator_ColumnPropNameInTable="CRUNCODEColumn" msprop:Generator_UserColumnName="CRUNCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="CREFNO" msprop:Generator_ColumnVarNameInTable="columnCREFNO" msprop:Generator_ColumnPropNameInRow="CREFNO" msprop:Generator_ColumnPropNameInTable="CREFNOColumn" msprop:Generator_UserColumnName="CREFNO" type="xs:string" minOccurs="0" />
+              <xs:element name="CDETAIL" msprop:Generator_ColumnVarNameInTable="columnCDETAIL" msprop:Generator_ColumnPropNameInRow="CDETAIL" msprop:Generator_ColumnPropNameInTable="CDETAILColumn" msprop:Generator_UserColumnName="CDETAIL" type="xs:string" minOccurs="0" />
+              <xs:element name="CREFVCODE" msprop:Generator_ColumnVarNameInTable="columnCREFVCODE" msprop:Generator_ColumnPropNameInRow="CREFVCODE" msprop:Generator_ColumnPropNameInTable="CREFVCODEColumn" msprop:Generator_UserColumnName="CREFVCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="NAMT" msprop:Generator_ColumnVarNameInTable="columnNAMT" msprop:Generator_ColumnPropNameInRow="NAMT" msprop:Generator_ColumnPropNameInTable="NAMTColumn" msprop:Generator_UserColumnName="NAMT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NVATAMT" msprop:Generator_ColumnVarNameInTable="columnNVATAMT" msprop:Generator_ColumnPropNameInRow="NVATAMT" msprop:Generator_ColumnPropNameInTable="NVATAMTColumn" msprop:Generator_UserColumnName="NVATAMT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NAMT2" msprop:Generator_ColumnVarNameInTable="columnNAMT2" msprop:Generator_ColumnPropNameInRow="NAMT2" msprop:Generator_ColumnPropNameInTable="NAMT2Column" msprop:Generator_UserColumnName="NAMT2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QCTRADETRM" msprop:Generator_ColumnVarNameInTable="columnQCTRADETRM" msprop:Generator_ColumnPropNameInRow="QCTRADETRM" msprop:Generator_ColumnPropNameInTable="QCTRADETRMColumn" msprop:Generator_UserColumnName="QCTRADETRM" type="xs:string" minOccurs="0" />
+              <xs:element name="QNTRADETRM" msprop:Generator_ColumnVarNameInTable="columnQNTRADETRM" msprop:Generator_ColumnPropNameInRow="QNTRADETRM" msprop:Generator_ColumnPropNameInTable="QNTRADETRMColumn" msprop:Generator_UserColumnName="QNTRADETRM" type="xs:string" minOccurs="0" />
+              <xs:element name="QCRemark1" msprop:Generator_ColumnVarNameInTable="columnQCRemark1" msprop:Generator_ColumnPropNameInRow="QCRemark1" msprop:Generator_ColumnPropNameInTable="QCRemark1Column" msprop:Generator_UserColumnName="QCRemark1" type="xs:string" minOccurs="0" />
+              <xs:element name="QCRemark2" msprop:Generator_ColumnVarNameInTable="columnQCRemark2" msprop:Generator_ColumnPropNameInRow="QCRemark2" msprop:Generator_ColumnPropNameInTable="QCRemark2Column" msprop:Generator_UserColumnName="QCRemark2" type="xs:string" minOccurs="0" />
+              <xs:element name="NVATAMT2" msprop:Generator_ColumnVarNameInTable="columnNVATAMT2" msprop:Generator_ColumnPropNameInRow="NVATAMT2" msprop:Generator_ColumnPropNameInTable="NVATAMT2Column" msprop:Generator_UserColumnName="NVATAMT2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TaxID" msprop:Generator_ColumnVarNameInTable="columnTaxID" msprop:Generator_ColumnPropNameInRow="TaxID" msprop:Generator_ColumnPropNameInTable="TaxIDColumn" msprop:Generator_UserColumnName="TaxID" type="xs:string" minOccurs="0" />
+              <xs:element name="BIZTYPE" msprop:Generator_ColumnVarNameInTable="columnBIZTYPE" msprop:Generator_ColumnPropNameInRow="BIZTYPE" msprop:Generator_ColumnPropNameInTable="BIZTYPEColumn" msprop:Generator_UserColumnName="BIZTYPE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67E4E8AD-23C4-4C45-8235-A5E5CCBB6772}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeSmartMRP</RootNamespace>
+    <AssemblyName>BeSmartMRP.Report</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppUtil, Version=1.0.7596.30540, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\DiamondFramework\V6\DLL\AppUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="DateTimeUtil, Version=1.0.7596.30540, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\DiamondFramework\V6\DLL\DateTimeUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WS.Data, Version=2.0.7596.30541, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\DiamondFramework\V6\DLL\WS.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agents\N2Alpha.cs" />
+    <Compile Include="Agents\PrintField.cs" />
+    <Compile Include="Agents\ReportHelper.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportEnum.cs" />
+    <Compile Include="Report\LocalDataSet\DTSACCHART.Designer.cs">
+      <DependentUpon>DTSACCHART.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSBUDGET01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSBUDGET01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSBUDGET02.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSBUDGET02.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSKEEPLOG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSKEEPLOG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSLIST01.cs">
+      <DependentUpon>DTSLIST01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSLIST01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSLIST01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSOUTPUT2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSOUTPUT2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPBGSTAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPBGSTAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPCOOR.Designer.cs">
+      <DependentUpon>DTSPCOOR.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPCOST.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPCOST.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPGENPR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPGENPR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPMCLIST.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPMCLIST.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPMOSTAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPMOSTAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPPROD.cs">
+      <DependentUpon>DTSPPROD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPPROD.Designer.cs">
+      <DependentUpon>DTSPPROD.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPRODSTAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPRODSTAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPSTK01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPSTK01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPSTK02.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPSTK02.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPSTMOVE.cs">
+      <DependentUpon>DTSPSTMOVE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPSTMOVE.Designer.cs">
+      <DependentUpon>DTSPSTMOVE.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSPVAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSPVAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSQSTK01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSQSTK01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSSALESUM01.cs">
+      <DependentUpon>DTSSALESUM01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSSALESUM01.Designer.cs">
+      <DependentUpon>DTSSALESUM01.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSSALESUM02.cs">
+      <DependentUpon>DTSSALESUM02.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSSALESUM02.Designer.cs">
+      <DependentUpon>DTSSALESUM02.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSSALESUM10.cs">
+      <DependentUpon>DTSSALESUM10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\DTSSALESUM10.Designer.cs">
+      <DependentUpon>DTSSALESUM10.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\FORM2PRINT.cs">
+      <DependentUpon>FORM2PRINT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LocalDataSet\FORM2PRINT.Designer.cs">
+      <DependentUpon>FORM2PRINT.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report\LocalDataSet\DTSACCHART.xsc">
+      <DependentUpon>DTSACCHART.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSACCHART.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSACCHART.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSACCHART.xss">
+      <DependentUpon>DTSACCHART.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSBUDGET01.xsc">
+      <DependentUpon>DTSBUDGET01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSBUDGET01.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSBUDGET01.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSBUDGET01.xss">
+      <DependentUpon>DTSBUDGET01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSBUDGET02.xsc">
+      <DependentUpon>DTSBUDGET02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSBUDGET02.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSBUDGET02.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSBUDGET02.xss">
+      <DependentUpon>DTSBUDGET02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSKEEPLOG.xsc">
+      <DependentUpon>DTSKEEPLOG.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSKEEPLOG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSKEEPLOG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSKEEPLOG.xss">
+      <DependentUpon>DTSKEEPLOG.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSLIST01.xsc">
+      <DependentUpon>DTSLIST01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSLIST01.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSLIST01.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSLIST01.xss">
+      <DependentUpon>DTSLIST01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSOUTPUT2.xsc">
+      <DependentUpon>DTSOUTPUT2.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSOUTPUT2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSOUTPUT2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSOUTPUT2.xss">
+      <DependentUpon>DTSOUTPUT2.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPBGSTAT.xsc">
+      <DependentUpon>DTSPBGSTAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPBGSTAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPBGSTAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPBGSTAT.xss">
+      <DependentUpon>DTSPBGSTAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPCOOR.xsc">
+      <DependentUpon>DTSPCOOR.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPCOOR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPCOOR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPCOOR.xss">
+      <DependentUpon>DTSPCOOR.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPCOST.xsc">
+      <DependentUpon>DTSPCOST.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPCOST.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPCOST.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPCOST.xss">
+      <DependentUpon>DTSPCOST.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPGENPR.xsc">
+      <DependentUpon>DTSPGENPR.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPGENPR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPGENPR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPGENPR.xss">
+      <DependentUpon>DTSPGENPR.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPMCLIST.xsc">
+      <DependentUpon>DTSPMCLIST.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPMCLIST.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPMCLIST.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPMCLIST.xss">
+      <DependentUpon>DTSPMCLIST.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPMOSTAT.xsc">
+      <DependentUpon>DTSPMOSTAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPMOSTAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPMOSTAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPMOSTAT.xss">
+      <DependentUpon>DTSPMOSTAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPPROD.xsc">
+      <DependentUpon>DTSPPROD.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPPROD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPPROD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPPROD.xss">
+      <DependentUpon>DTSPPROD.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPRODSTAT.xsc">
+      <DependentUpon>DTSPRODSTAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPRODSTAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPRODSTAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPRODSTAT.xss">
+      <DependentUpon>DTSPRODSTAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK01.xsc">
+      <DependentUpon>DTSPSTK01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK01.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPSTK01.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK01.xss">
+      <DependentUpon>DTSPSTK01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK01.xsx">
+      <DependentUpon>DTSPSTK01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK02.xsc">
+      <DependentUpon>DTSPSTK02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK02.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPSTK02.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTK02.xss">
+      <DependentUpon>DTSPSTK02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTMOVE.xsc">
+      <DependentUpon>DTSPSTMOVE.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTMOVE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPSTMOVE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPSTMOVE.xss">
+      <DependentUpon>DTSPSTMOVE.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPVAT.xsc">
+      <DependentUpon>DTSPVAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPVAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSPVAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSPVAT.xss">
+      <DependentUpon>DTSPVAT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSQSTK01.xsc">
+      <DependentUpon>DTSQSTK01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSQSTK01.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSQSTK01.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\DTSQSTK01.xss">
+      <DependentUpon>DTSQSTK01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM01.xsc">
+      <DependentUpon>DTSSALESUM01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM01.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSSALESUM01.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM01.xss">
+      <DependentUpon>DTSSALESUM01.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM02.xsc">
+      <DependentUpon>DTSSALESUM02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM02.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSSALESUM02.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM02.xss">
+      <DependentUpon>DTSSALESUM02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM02.xsx">
+      <DependentUpon>DTSSALESUM02.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM10.xsc">
+      <DependentUpon>DTSSALESUM10.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSSALESUM10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\LocalDataSet\DTSSALESUM10.xss">
+      <DependentUpon>DTSSALESUM10.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\FORM2PRINT.xsc">
+      <DependentUpon>FORM2PRINT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\FORM2PRINT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FORM2PRINT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\LocalDataSet\FORM2PRINT.xss">
+      <DependentUpon>FORM2PRINT.xsd</DependentUpon>
+    </None>
+    <None Include="Report\LocalDataSet\FORM2PRINT.xsx">
+      <DependentUpon>FORM2PRINT.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeSmartMRP.Business\BeSmartMRP.Business.csproj">
+      <Project>{99D80DE4-B6F9-4E33-86DC-7AB267387253}</Project>
+      <Name>BeSmartMRP.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

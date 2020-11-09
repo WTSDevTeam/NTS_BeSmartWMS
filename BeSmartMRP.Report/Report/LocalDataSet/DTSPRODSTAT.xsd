@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSPRODSTAT" targetNamespace="http://tempuri.org/DTSPRODSTAT.xsd" xmlns:mstns="http://tempuri.org/DTSPRODSTAT.xsd" xmlns="http://tempuri.org/DTSPRODSTAT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSPRODSTAT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DTSPRODSTAT" msprop:Generator_DataSetName="DTSPRODSTAT" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PPRODSTAT" msprop:Generator_UserTableName="PPRODSTAT" msprop:Generator_RowDeletedName="PPRODSTATRowDeleted" msprop:Generator_RowChangedName="PPRODSTATRowChanged" msprop:Generator_RowClassName="PPRODSTATRow" msprop:Generator_RowChangingName="PPRODSTATRowChanging" msprop:Generator_RowEvArgName="PPRODSTATRowChangeEvent" msprop:Generator_RowEvHandlerName="PPRODSTATRowChangeEventHandler" msprop:Generator_TableClassName="PPRODSTATDataTable" msprop:Generator_TableVarName="tablePPRODSTAT" msprop:Generator_RowDeletingName="PPRODSTATRowDeleting" msprop:Generator_TablePropName="PPRODSTAT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QcProd" msprop:Generator_UserColumnName="QcProd" msprop:Generator_ColumnVarNameInTable="columnQcProd" msprop:Generator_ColumnPropNameInRow="QcProd" msprop:Generator_ColumnPropNameInTable="QcProdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="QnProd" msprop:Generator_UserColumnName="QnProd" msprop:Generator_ColumnVarNameInTable="columnQnProd" msprop:Generator_ColumnPropNameInRow="QnProd" msprop:Generator_ColumnPropNameInTable="QnProdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="QTY_SO" msdata:Caption="nAmt" msprop:Generator_UserColumnName="QTY_SO" msprop:Generator_ColumnVarNameInTable="columnQTY_SO" msprop:Generator_ColumnPropNameInRow="QTY_SO" msprop:Generator_ColumnPropNameInTable="QTY_SOColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTY_STOCK" msdata:Caption="cGroup" msprop:Generator_UserColumnName="QTY_STOCK" msprop:Generator_ColumnVarNameInTable="columnQTY_STOCK" msprop:Generator_ColumnPropNameInRow="QTY_STOCK" msprop:Generator_ColumnPropNameInTable="QTY_STOCKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTY_MAXSTOCK" msdata:Caption="cGroup" msprop:Generator_UserColumnName="QTY_MAXSTOCK" msprop:Generator_ColumnVarNameInTable="columnQTY_MAXSTOCK" msprop:Generator_ColumnPropNameInRow="QTY_MAXSTOCK" msprop:Generator_ColumnPropNameInTable="QTY_MAXSTOCKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTY_MINSTOCK" msdata:Caption="cGroup" msprop:Generator_UserColumnName="QTY_MINSTOCK" msprop:Generator_ColumnVarNameInTable="columnQTY_MINSTOCK" msprop:Generator_ColumnPropNameInRow="QTY_MINSTOCK" msprop:Generator_ColumnPropNameInTable="QTY_MINSTOCKColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTY_MO" msdata:Caption="cGroup" msprop:Generator_UserColumnName="QTY_MO" msprop:Generator_ColumnVarNameInTable="columnQTY_MO" msprop:Generator_ColumnPropNameInRow="QTY_MO" msprop:Generator_ColumnPropNameInTable="QTY_MOColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="POPTION" msprop:Generator_UserColumnName="POPTION" msprop:Generator_ColumnPropNameInRow="POPTION" msprop:Generator_ColumnVarNameInTable="columnPOPTION" msprop:Generator_ColumnPropNameInTable="POPTIONColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

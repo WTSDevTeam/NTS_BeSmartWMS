@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSSALE21" targetNamespace="http://tempuri.org/DTSSALE21.xsd" xmlns:mstns="http://tempuri.org/DTSSALE21.xsd" xmlns="http://tempuri.org/DTSSALE21.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSSALE21" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DTSSALE21" msprop:Generator_UserDSName="DTSSALE21">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SALESUM21" msprop:Generator_TableClassName="SALESUM21DataTable" msprop:Generator_TableVarName="tableSALESUM21" msprop:Generator_TablePropName="SALESUM21" msprop:Generator_RowDeletingName="SALESUM21RowDeleting" msprop:Generator_RowChangingName="SALESUM21RowChanging" msprop:Generator_RowEvHandlerName="SALESUM21RowChangeEventHandler" msprop:Generator_RowDeletedName="SALESUM21RowDeleted" msprop:Generator_UserTableName="SALESUM21" msprop:Generator_RowChangedName="SALESUM21RowChanged" msprop:Generator_RowEvArgName="SALESUM21RowChangeEvent" msprop:Generator_RowClassName="SALESUM21Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PARA" msdata:Caption="cID" msprop:Generator_ColumnVarNameInTable="columnPARA" msprop:Generator_ColumnPropNameInRow="PARA" msprop:Generator_ColumnPropNameInTable="PARAColumn" msprop:Generator_UserColumnName="PARA" type="xs:string" minOccurs="0" />
+              <xs:element name="QCWKSTAT" msdata:Caption="cCode" msprop:Generator_ColumnVarNameInTable="columnQCWKSTAT" msprop:Generator_ColumnPropNameInRow="QCWKSTAT" msprop:Generator_ColumnPropNameInTable="QCWKSTATColumn" msprop:Generator_UserColumnName="QCWKSTAT" type="xs:string" minOccurs="0" />
+              <xs:element name="POSS_SESS" msdata:Caption="cName" msprop:Generator_ColumnVarNameInTable="columnPOSS_SESS" msprop:Generator_ColumnPropNameInRow="POSS_SESS" msprop:Generator_ColumnPropNameInTable="POSS_SESSColumn" msprop:Generator_UserColumnName="POSS_SESS" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC" msdata:Caption="cName2" msprop:Generator_ColumnVarNameInTable="columnDESC" msprop:Generator_ColumnPropNameInRow="DESC" msprop:Generator_ColumnPropNameInTable="DESCColumn" msprop:Generator_UserColumnName="DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="dDate" msdata:Caption="cCateg" msprop:Generator_ColumnVarNameInTable="columndDate" msprop:Generator_ColumnPropNameInRow="dDate" msprop:Generator_ColumnPropNameInTable="dDateColumn" msprop:Generator_UserColumnName="dDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Qty" msdata:Caption="cGroup" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amt" msdata:Caption="nLevel" msprop:Generator_ColumnVarNameInTable="columnAmt" msprop:Generator_ColumnPropNameInRow="Amt" msprop:Generator_ColumnPropNameInTable="AmtColumn" msprop:Generator_UserColumnName="Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VATAmt" msdata:Caption="cQcAcChart" msprop:Generator_ColumnVarNameInTable="columnVATAmt" msprop:Generator_ColumnPropNameInRow="VATAmt" msprop:Generator_ColumnPropNameInTable="VATAmtColumn" msprop:Generator_UserColumnName="VATAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DiscAmtI" msprop:Generator_ColumnVarNameInTable="columnDiscAmtI" msprop:Generator_ColumnPropNameInRow="DiscAmtI" msprop:Generator_ColumnPropNameInTable="DiscAmtIColumn" msprop:Generator_UserColumnName="DiscAmtI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DiscAmt" msprop:Generator_ColumnVarNameInTable="columnDiscAmt" msprop:Generator_ColumnPropNameInRow="DiscAmt" msprop:Generator_ColumnPropNameInTable="DiscAmtColumn" msprop:Generator_UserColumnName="DiscAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SEQ" msprop:Generator_ColumnVarNameInTable="columnSEQ" msprop:Generator_ColumnPropNameInRow="SEQ" msprop:Generator_ColumnPropNameInTable="SEQColumn" msprop:Generator_UserColumnName="SEQ" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

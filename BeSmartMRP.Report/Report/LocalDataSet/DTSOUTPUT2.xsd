@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSOUTPUT2" targetNamespace="http://tempuri.org/DTSOUTPUT2.xsd" xmlns:mstns="http://tempuri.org/DTSOUTPUT2.xsd" xmlns="http://tempuri.org/DTSOUTPUT2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSOUTPUT2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DTSOUTPUT2" msprop:Generator_UserDSName="DTSOUTPUT2" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XRBUDGET202" msprop:Generator_UserTableName="XRBUDGET202" msprop:Generator_RowDeletedName="XRBUDGET202RowDeleted" msprop:Generator_TableClassName="XRBUDGET202DataTable" msprop:Generator_RowChangedName="XRBUDGET202RowChanged" msprop:Generator_RowClassName="XRBUDGET202Row" msprop:Generator_RowChangingName="XRBUDGET202RowChanging" msprop:Generator_RowEvArgName="XRBUDGET202RowChangeEvent" msprop:Generator_RowEvHandlerName="XRBUDGET202RowChangeEventHandler" msprop:Generator_TablePropName="XRBUDGET202" msprop:Generator_TableVarName="tableXRBUDGET202" msprop:Generator_RowDeletingName="XRBUDGET202RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nLevel" msdata:Caption="cCode" msprop:Generator_UserColumnName="nLevel" msprop:Generator_ColumnPropNameInRow="nLevel" msprop:Generator_ColumnVarNameInTable="columnnLevel" msprop:Generator_ColumnPropNameInTable="nLevelColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="nRun" msdata:Caption="cName" msprop:Generator_UserColumnName="nRun" msprop:Generator_ColumnPropNameInRow="nRun" msprop:Generator_ColumnVarNameInTable="columnnRun" msprop:Generator_ColumnPropNameInTable="nRunColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="cSeq" msdata:Caption="cName2" msprop:Generator_UserColumnName="cSeq" msprop:Generator_ColumnPropNameInRow="cSeq" msprop:Generator_ColumnVarNameInTable="columncSeq" msprop:Generator_ColumnPropNameInTable="cSeqColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cRunNo" msdata:Caption="cCateg" msprop:Generator_UserColumnName="cRunNo" msprop:Generator_ColumnPropNameInRow="cRunNo" msprop:Generator_ColumnVarNameInTable="columncRunNo" msprop:Generator_ColumnPropNameInTable="cRunNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cType" msdata:Caption="cGroup" msprop:Generator_UserColumnName="cType" msprop:Generator_ColumnPropNameInRow="cType" msprop:Generator_ColumnVarNameInTable="columncType" msprop:Generator_ColumnPropNameInTable="cTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cCode" msdata:Caption="cType2" msprop:Generator_UserColumnName="cCode" msprop:Generator_ColumnPropNameInRow="cCode" msprop:Generator_ColumnVarNameInTable="columncCode" msprop:Generator_ColumnPropNameInTable="cCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dDate" msdata:Caption="cGroup" msprop:Generator_UserColumnName="dDate" msprop:Generator_ColumnPropNameInRow="dDate" msprop:Generator_ColumnVarNameInTable="columndDate" msprop:Generator_ColumnPropNameInTable="dDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dUseDate" msprop:Generator_UserColumnName="dUseDate" msprop:Generator_ColumnPropNameInRow="dUseDate" msprop:Generator_ColumnVarNameInTable="columndUseDate" msprop:Generator_ColumnPropNameInTable="dUseDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cQcPRBGChart" msprop:Generator_UserColumnName="cQcPRBGChart" msprop:Generator_ColumnPropNameInRow="cQcPRBGChart" msprop:Generator_ColumnVarNameInTable="columncQcPRBGChart" msprop:Generator_ColumnPropNameInTable="cQcPRBGChartColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnPRBGChart" msprop:Generator_UserColumnName="cQnPRBGChart" msprop:Generator_ColumnPropNameInRow="cQnPRBGChart" msprop:Generator_ColumnVarNameInTable="columncQnPRBGChart" msprop:Generator_ColumnPropNameInTable="cQnPRBGChartColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQcJob" msprop:Generator_UserColumnName="cQcJob" msprop:Generator_ColumnPropNameInRow="cQcJob" msprop:Generator_ColumnVarNameInTable="columncQcJob" msprop:Generator_ColumnPropNameInTable="cQcJobColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="cQnJob" msprop:Generator_UserColumnName="cQnJob" msprop:Generator_ColumnPropNameInRow="cQnJob" msprop:Generator_ColumnVarNameInTable="columncQnJob" msprop:Generator_ColumnPropNameInTable="cQnJobColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="nRecvAmt" msdata:Caption="cGroup2" msprop:Generator_UserColumnName="nRecvAmt" msprop:Generator_ColumnPropNameInRow="nRecvAmt" msprop:Generator_ColumnVarNameInTable="columnnRecvAmt" msprop:Generator_ColumnPropNameInTable="nRecvAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nUseAmt" msdata:Caption="cQcAcChart" msprop:Generator_UserColumnName="nUseAmt" msprop:Generator_ColumnPropNameInRow="nUseAmt" msprop:Generator_ColumnVarNameInTable="columnnUseAmt" msprop:Generator_ColumnPropNameInTable="nUseAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nRetAmt" msdata:Caption="cQnAcChart" msprop:Generator_UserColumnName="nRetAmt" msprop:Generator_ColumnPropNameInRow="nRetAmt" msprop:Generator_ColumnVarNameInTable="columnnRetAmt" msprop:Generator_ColumnPropNameInTable="nRetAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nBalAmt" msdata:Caption="cQcAcChart2" msprop:Generator_UserColumnName="nBalAmt" msprop:Generator_ColumnPropNameInRow="nBalAmt" msprop:Generator_ColumnVarNameInTable="columnnBalAmt" msprop:Generator_ColumnPropNameInTable="nBalAmtColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

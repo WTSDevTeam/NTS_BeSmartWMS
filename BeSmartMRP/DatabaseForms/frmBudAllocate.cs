@@ -1,0 +1,1617 @@
+
+#define xd_RUNMODE_DEBUG
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+using WS.Data;
+using WS.Data.Agents;
+using AppUtil;
+
+using DevExpress.XtraGrid.Views.Base;
+
+using BeSmartMRP.Business.Entity;
+using BeSmartMRP.UIHelper;
+using BeSmartMRP.Business.Agents;
+
+namespace BeSmartMRP.DatabaseForms
+{
+    public partial class frmBudAllocate : UIHelper.frmBase
+    {
+ 
+        public static string TASKNAME = "EBGALLOC";
+
+        public static int MAXLENGTH_CODE = 15;
+        public static int MAXLENGTH_DESC = 150;
+
+        private const int xd_PAGE_BROWSE = 0;
+        private const int xd_PAGE_EDIT1 = 1;
+
+        private DataSet dtsDataEnv = new DataSet();
+        private string mstrBrowViewAlias = "Brow_Alias";
+        private int mintSaveBrowViewRowIndex = -1;
+        private string mstrSortKey = "CCODE";
+        private bool mbllFilterResult = false;
+
+        private string mstrRefTable = MapTable.Table.BudAllocate;
+        private string mstrITable = MapTable.Table.BudAllocateIT;
+
+        private string mstrTemPd = "TemPd";
+
+        private string mstrBranch = "";
+        private string mstrBGBook = "";
+        private string mstrBGYear = "";
+        private int mintBGYear = 0;
+
+        private string mstrEditRowID = "";
+        private UIHelper.AppFormState mFormEditMode;
+
+        private string mstrOldCode = "";
+        private string mstrOldName = "";
+
+        private FormActiveMode mFormActiveMode = FormActiveMode.Edit;
+        private bool mbllPopUpResult = true;
+        private bool mbllIsShowDialog = false;
+        private string mstrSearchStr = "";
+        private bool mbllIsFormQuery = false;
+
+        WS.Data.Agents.cDBMSAgent mSaveDBAgent = null;
+        System.Data.IDbConnection mdbConn = null;
+        System.Data.IDbTransaction mdbTran = null;
+
+        WS.Data.Agents.cDBMSAgent mSaveDBAgent2 = null;
+        System.Data.IDbConnection mdbConn2 = null;
+        System.Data.IDbTransaction mdbTran2 = null;
+
+        //private DialogForms.dlgGetJob pofrmGetJob = null;
+        //private DialogForms.dlgGetDept pofrmGetDept = null;
+        //private DialogForms.dlgGetUM pofrmGetUM = null;
+
+        private DatabaseForms.frmBudType pofrmGetBudType = null;
+        private DatabaseForms.frmEMJob pofrmGetJob = null;
+        private DatabaseForms.frmEMDept pofrmGetDept = null;
+        private DatabaseForms.frmEMUOM pofrmGetUM = null;
+
+        public frmBudAllocate()
+        {
+            InitializeComponent();
+            this.pmInitForm();
+        }
+
+        public frmBudAllocate(FormActiveMode inMode)
+        {
+            InitializeComponent();
+
+            this.mFormActiveMode = inMode;
+            this.pmInitForm();
+        }
+
+        private static frmBudAllocate mInstanse = null;
+
+        public static frmBudAllocate GetInstanse()
+        {
+            if (mInstanse == null)
+            {
+                mInstanse = new frmBudAllocate();
+            }
+            return mInstanse;
+        }
+
+        private static void pmClearInstanse()
+        {
+            if (mInstanse != null)
+            {
+                mInstanse = null;
+            }
+        }
+
+        public FormActiveMode ActiveMode
+        {
+            get { return this.mFormActiveMode; }
+            set { this.mFormActiveMode = value; }
+        }
+
+        public bool PopUpResult
+        {
+            get { return this.mbllPopUpResult; }
+        }
+
+        public bool IsShowDialog
+        {
+            get { return this.mbllIsShowDialog; }
+        }
+
+        private void pmInitForm()
+        {
+            UIBase.WaitWind("Loading Form...");
+            this.pmCreateTem();
+            this.pmInitGridProp_TemPd();
+
+            this.pmInitializeComponent();
+            this.pmFilterForm();
+            this.pmGotoBrowPage();
+
+            this.pmInitGridProp();
+            this.gridView1.MoveLast();
+
+            UIBase.WaitClear();
+
+            this.DialogResult = (this.mbllFilterResult == true ? DialogResult.OK : DialogResult.Cancel);
+            if (!this.mbllFilterResult)
+            {
+                this.Close();
+                //frmBudAllocate.pmClearInstanse();
+            }
+        }
+
+        private void pmInitializeComponent()
+        {
+
+            this.txtCode.Properties.MaxLength = MAXLENGTH_CODE;
+            this.txtDesc.Properties.MaxLength = 150;
+    
+            UIHelper.UIBase.CreateStandardToolbar(this.barMainEdit, this.barMain);
+            if (this.mFormActiveMode == FormActiveMode.PopUp
+                || this.mFormActiveMode == FormActiveMode.Report)
+            {
+                this.ShowInTaskbar = false;
+                this.ControlBox = false;
+            }
+
+        }
+
+        private void pmSetBrowView()
+        {
+
+            string strErrorMsg = "";
+            WS.Data.Agents.cDBMSAgent pobjSQLUtil = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+
+            string strFMDBName = App.ConfigurationManager.ConnectionInfo.ERPDBMSName;
+            string strEmplRTab = strFMDBName + ".dbo.EMPLR";
+
+            string strSQLExec = "select BGALLOCHD.CROWID, BGALLOCHD.CCODE, BGALLOCHD.DDATE, BGALLOCHD.CDESC, BGALLOCHD.DCREATE, BGALLOCHD.DLASTUPDBY, EM1.CLOGIN as CLOGIN_ADD, EM2.CLOGIN as CLOGIN_UPD from {0} BGALLOCHD";
+            strSQLExec += " left join {1} EM1 ON EM1.CROWID = BGALLOCHD.CCREATEBY ";
+            strSQLExec += " left join {1} EM2 ON EM2.CROWID = BGALLOCHD.CLASTUPDBY ";
+            strSQLExec += " where BGALLOCHD.CCORP = ? and BGALLOCHD.CBRANCH = ? and BGALLOCHD.CBGBOOK = ? and BGALLOCHD.NBGYEAR = ? ";
+            strSQLExec = string.Format(strSQLExec, new string[] { this.mstrRefTable, "APPLOGIN" });
+
+            //pobjSQLUtil.SetPara(pAPara);
+            pobjSQLUtil.SetPara(new object[] { App.ActiveCorp.RowID, this.mstrBranch, this.mstrBGBook, this.mintBGYear });
+            pobjSQLUtil.SQLExec(ref this.dtsDataEnv, this.mstrBrowViewAlias, "BGAllocate", strSQLExec, ref strErrorMsg);
+
+        }
+
+        private void pmInitGridProp()
+        {
+            System.Data.DataView dvBrow = this.dtsDataEnv.Tables[this.mstrBrowViewAlias].DefaultView;
+            dvBrow.Sort = "CCODE";
+
+            this.grdBrowView.DataSource = this.dtsDataEnv.Tables[this.mstrBrowViewAlias];
+
+            for (int intCnt = 0; intCnt < this.gridView1.Columns.Count; intCnt++)
+            {
+                this.gridView1.Columns[intCnt].Visible = false;
+            }
+
+            this.gridView1.Columns["CCODE"].Visible = true;
+            this.gridView1.Columns["DDATE"].Visible = true;
+            this.gridView1.Columns["CDESC"].Visible = true;
+
+            this.gridView1.Columns["CCODE"].VisibleIndex = 0;
+            this.gridView1.Columns["DDATE"].VisibleIndex = 1;
+            this.gridView1.Columns["CDESC"].VisibleIndex = 2;
+
+            this.gridView1.Columns["CCODE"].Caption = "เลขที่";
+            this.gridView1.Columns["DDATE"].Caption = "วันที่";
+            this.gridView1.Columns["CDESC"].Caption = "รายละเอียด";
+
+            this.gridView1.Columns["CCODE"].Width = 100;
+            this.gridView1.Columns["DDATE"].Width = 100;
+            this.gridView1.Columns["CDESC"].Width = this.grdBrowView.Width - 100 - 100 - 50;
+
+            this.pmSetSortKey("cCode", true);
+        }
+
+        private void grdBrowView_Resize(object sender, EventArgs e)
+        {
+            this.pmRecalColWidth();
+        }
+
+        private void gridView1_ColumnWidthChanged(object sender, ColumnEventArgs e)
+        {
+            this.pmRecalColWidth();
+        }
+
+        private void pmRecalColWidth()
+        {
+            this.gridView1.Columns["CDESC"].Width = this.grdBrowView.Width - this.gridView1.Columns["CCODE"].Width - this.gridView1.Columns["DDATE"].Width - 30;
+        }
+
+        private void pmInitGridProp_TemPd()
+        {
+            System.Data.DataView dvBrow = this.dtsDataEnv.Tables[this.mstrTemPd].DefaultView;
+
+            this.grdTemPd.DataSource = this.dtsDataEnv.Tables[this.mstrTemPd];
+
+            for (int intCnt = 0; intCnt < this.gridView2.Columns.Count; intCnt++)
+            {
+                this.gridView2.Columns[intCnt].Visible = false;
+            }
+
+            this.gridView2.Columns["cQnJob"].OptionsColumn.AllowFocus = false;
+
+            this.gridView2.Columns["cQcJob"].Visible = true;
+            this.gridView2.Columns["cQnJob"].Visible = true;
+            this.gridView2.Columns["cRemark"].Visible = true;
+            this.gridView2.Columns["nAllocPcn"].Visible = true;
+            this.gridView2.Columns["nQty"].Visible = true;
+            this.gridView2.Columns["cQnUM"].Visible = true;
+            this.gridView2.Columns["cQcDept"].Visible = true;
+            this.gridView2.Columns["cType"].Visible = true;
+
+            this.gridView2.Columns["cQcJob"].VisibleIndex = 0;
+            this.gridView2.Columns["cQnJob"].VisibleIndex = 1;
+            this.gridView2.Columns["cRemark"].VisibleIndex = 2;
+            this.gridView2.Columns["nAllocPcn"].VisibleIndex = 3;
+            this.gridView2.Columns["nQty"].VisibleIndex = 4;
+            this.gridView2.Columns["cQnUM"].VisibleIndex = 5;
+            this.gridView2.Columns["cQcDept"].VisibleIndex = 6;
+            this.gridView2.Columns["cType"].VisibleIndex = 7;
+
+            this.gridView2.Columns["cQcJob"].Caption = "รหัสโครงการปันส่วน";
+            this.gridView2.Columns["cQnJob"].Caption = "ชื่อโครงการปันส่วน";
+            this.gridView2.Columns["cRemark"].Caption = "หมายเหตุ";
+            this.gridView2.Columns["nAllocPcn"].Caption = "%ปันส่วน";
+            this.gridView2.Columns["nQty"].Caption = "จำนวน";
+            this.gridView2.Columns["cQnUM"].Caption = "หน่วย";
+            this.gridView2.Columns["cQcDept"].Caption = "ฝ่าย";
+            this.gridView2.Columns["cType"].Caption = "TYPE";
+
+            this.gridView2.Columns["cQcJob"].Width = 35;
+            this.gridView2.Columns["cQnJob"].Width = 45;
+            this.gridView2.Columns["nAllocPcn"].Width = 15;
+            this.gridView2.Columns["nQty"].Width = 15;
+            this.gridView2.Columns["cQnUM"].Width = 15;
+            this.gridView2.Columns["cQcDept"].Width = 15;
+            this.gridView2.Columns["cType"].Width = 10;
+
+            this.grcQcJob.MaxLength = DialogForms.dlgGetJob.MAXLENGTH_CODE;
+            this.grcQnJob.MaxLength = DialogForms.dlgGetJob.MAXLENGTH_NAME;
+            this.grcQnUM.MaxLength = DialogForms.dlgGetUM.MAXLENGTH_NAME;
+            this.grcQcDept.MaxLength = DialogForms.dlgGetDept.MAXLENGTH_CODE;
+
+            this.grcRemark.MaxLength = 150;
+
+            this.gridView2.Columns["cQcJob"].ColumnEdit = this.grcQcJob;
+            this.gridView2.Columns["cQnJob"].ColumnEdit = this.grcQnJob;
+            this.gridView2.Columns["cRemark"].ColumnEdit = this.grcRemark;
+            this.gridView2.Columns["nAllocPcn"].ColumnEdit = this.grcAllocPcn;
+            this.gridView2.Columns["nQty"].ColumnEdit = this.grcQty;
+            this.gridView2.Columns["cQcDept"].ColumnEdit = this.grcQcDept;
+            this.gridView2.Columns["cQnUM"].ColumnEdit = this.grcQnUM;
+            this.gridView2.Columns["cType"].ColumnEdit = this.grcType;
+
+        }
+
+        private void pmSetSortKey(string inColumn, bool inIsClear)
+        {
+            if (inIsClear)
+            {
+                this.gridView1.SortInfo.Clear();
+                this.gridView1.SortInfo.Add(this.gridView1.Columns[this.mstrSortKey], DevExpress.Data.ColumnSortOrder.Ascending);
+                this.gridView1.RefreshData();
+            }
+
+            for (int intCnt = 0; intCnt < this.gridView1.Columns.Count;intCnt++ )
+            {
+                this.gridView1.Columns[intCnt].AppearanceCell.BackColor = Color.White;
+            }
+            this.mstrSortKey = inColumn.ToUpper();
+            this.gridView1.Columns[this.mstrSortKey].AppearanceCell.BackColor = Color.WhiteSmoke;
+            this.gridView1.FocusedColumn = this.gridView1.Columns[this.mstrSortKey];
+        }
+
+        private void pgfMainEdit_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            this.pmSetToolbarState(pgfMainEdit.SelectedTabPageIndex);
+
+            if (this.mFormActiveMode == FormActiveMode.PopUp
+                || this.mFormActiveMode == FormActiveMode.Report)
+            {
+                if (pgfMainEdit.SelectedTabPageIndex == xd_PAGE_BROWSE)
+                {
+                    this.Location = new Point(AppUtil.CommonHelper.SysMetric(1) - this.Width - 20, AppUtil.CommonHelper.SysMetric(9) + 5);
+                }
+                else 
+                {
+                    this.Location = new Point(Convert.ToInt16((AppUtil.CommonHelper.SysMetric(1) - this.Width) / 2), Convert.ToInt16((AppUtil.CommonHelper.SysMetric(2) - this.Height) / 2));
+                }
+            }
+
+        }
+
+        private void pmSetToolbarState(int inActivePage)
+        {
+            this.barMainEdit.Items[WsToolBar.Enter.ToString()].Visibility = (this.mFormActiveMode == FormActiveMode.PopUp ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never);
+
+            if (this.mFormActiveMode == FormActiveMode.Report)
+            {
+                this.barMainEdit.Items[WsToolBar.Enter.ToString()].Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                this.barMainEdit.Items[WsToolBar.Insert.ToString()].Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                this.barMainEdit.Items[WsToolBar.Update.ToString()].Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                this.barMainEdit.Items[WsToolBar.Delete.ToString()].Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+
+            this.barMainEdit.Items[WsToolBar.Enter.ToString()].Enabled = (inActivePage == 0 ? true : false);
+            this.barMainEdit.Items[WsToolBar.Insert.ToString()].Enabled = (inActivePage == 0 ? true : false);
+            this.barMainEdit.Items[WsToolBar.Update.ToString()].Enabled = (inActivePage == 0 ? true : false);
+            this.barMainEdit.Items[WsToolBar.Delete.ToString()].Enabled = (inActivePage == 0 ? true : false);
+            this.barMainEdit.Items[WsToolBar.Search.ToString()].Enabled = (inActivePage == 0 ? true : false);
+            this.barMainEdit.Items[WsToolBar.Refresh.ToString()].Enabled = (inActivePage == 0 ? true : false);
+
+            this.barMainEdit.Items[WsToolBar.Save.ToString()].Enabled = (inActivePage == 0 ? false : true);
+            this.barMainEdit.Items[WsToolBar.Undo.ToString()].Enabled = (inActivePage == 0 ? false : true);
+        }
+
+        private void pmFilterForm()
+        {
+            this.pmInitPopUpDialog("FILTER");
+        }
+
+        private void pmGotoBrowPage()
+        {
+            this.pmBlankFormData();
+            this.pmRefreshBrowView();
+
+            this.pmSetPageStatus(false);
+            this.pgfMainEdit.TabPages[0].PageEnabled = true;
+            this.pgfMainEdit.SelectedTabPageIndex = 0;
+            this.grdBrowView.Focus();
+        }
+
+        private void pmRefreshBrowView()
+        {
+            this.mintSaveBrowViewRowIndex = this.gridView1.FocusedRowHandle;
+            this.pmSetBrowView();
+            this.grdBrowView.DataSource = this.dtsDataEnv.Tables[this.mstrBrowViewAlias];
+
+            if (this.gridView1.RowCount > this.mintSaveBrowViewRowIndex)
+                this.gridView1.FocusedRowHandle = this.mintSaveBrowViewRowIndex;
+
+        }
+
+        private void pmSetPageStatus(bool inIsEnable)
+        {
+            for (int intCnt = 0; intCnt < this.pgfMainEdit.TabPages.Count; intCnt++)
+            {
+                this.pgfMainEdit.TabPages[intCnt].PageEnabled = inIsEnable;
+            }
+        }
+
+        private void pmInitPopUpDialog(string inDialogName)
+        {
+            switch (inDialogName.TrimEnd().ToUpper())
+            {
+                case "FILTER":
+                    using (Common.dlgFilter01 dlgFilter = new Common.dlgFilter01(SysDef.gc_REFTYPE_BUDALLOC))
+                    {
+
+                        dlgFilter.SetTitle(this.Text, TASKNAME);
+                        dlgFilter.ShowDialog();
+                        if (dlgFilter.DialogResult == DialogResult.OK)
+                        {
+                            this.mbllFilterResult = true;
+
+                            this.txtQcBook.Tag = dlgFilter.BGBookID;
+                            this.txtQcBook.Text = dlgFilter.BGBookCode;
+                            this.txtYear.Text = dlgFilter.mYear;
+
+                            this.mstrBranch = dlgFilter.BranchID;
+                            this.mstrBGBook = dlgFilter.BGBookID;
+                            this.mstrBGYear = dlgFilter.mYear;
+                            this.mintBGYear = dlgFilter.nYear;
+
+                            this.pmRefreshBrowView();
+                            this.grdBrowView.Focus();
+
+                        }
+                    }
+                    break;
+                case "BUDTYPE":
+                    if (this.pofrmGetBudType == null)
+                    {
+                        this.pofrmGetBudType = new DatabaseForms.frmBudType(FormActiveMode.Report);
+                        this.pofrmGetBudType.Location = new Point(AppUtil.CommonHelper.SysMetric(1) - this.pofrmGetBudType.Width - 10, AppUtil.CommonHelper.SysMetric(9) + 5);
+                    }
+                    break;
+                case "JOB":
+                    if (this.pofrmGetJob == null)
+                    {
+                        this.pofrmGetJob = new frmEMJob(FormActiveMode.PopUp);
+                        this.pofrmGetJob.Location = new Point(AppUtil.CommonHelper.SysMetric(1) - this.pofrmGetJob.Width - 10, AppUtil.CommonHelper.SysMetric(9) + 5);
+                    }
+                    break;
+                case "DEPT":
+                    if (this.pofrmGetDept == null)
+                    {
+                        this.pofrmGetDept = new frmEMDept(FormActiveMode.PopUp);
+                        this.pofrmGetDept.Location = new Point(AppUtil.CommonHelper.SysMetric(1) - this.pofrmGetDept.Width - 10, AppUtil.CommonHelper.SysMetric(9) + 5);
+                    }
+                    break;
+
+                case "UM":
+                    if (this.pofrmGetUM == null)
+                    {
+                        this.pofrmGetUM = new frmEMUOM(FormActiveMode.PopUp);
+                        this.pofrmGetUM.Location = new Point(AppUtil.CommonHelper.SysMetric(1) - this.pofrmGetUM.Width - 10, AppUtil.CommonHelper.SysMetric(9) + 5);
+                    }
+                    break;
+            
+            }
+        }
+
+        private void txtPopUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DevExpress.XtraEditors.ButtonEdit txtPopUp = (DevExpress.XtraEditors.ButtonEdit)sender;
+            this.pmPopUpButtonClick(txtPopUp.Name.ToUpper(), txtPopUp.Text);
+        }
+
+        private void txtPopUp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt | e.Control | e.Shift)
+                return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    DevExpress.XtraEditors.ButtonEdit txtPopUp = (DevExpress.XtraEditors.ButtonEdit)sender;
+                    this.pmPopUpButtonClick(txtPopUp.Name.ToUpper(), txtPopUp.Text);
+                    break;
+            }
+
+        }
+
+        private void pmPopUpButtonClick(string inTextbox, string inPara1)
+        {
+            switch (inTextbox)
+            {
+                case "TXTQCBUDTYPE":
+                case "TXTQNBUDTYPE":
+                    this.pmInitPopUpDialog("BUDTYPE");
+                    string strPrefix = (inTextbox == "TXTQCBUDTYPE" ? "CCODE" : "CNAME");
+                    this.pofrmGetBudType.ValidateField(inPara1, strPrefix, true);
+                    if (this.pofrmGetBudType.PopUpResult)
+                    {
+                        this.pmRetrievePopUpVal(inTextbox);
+                    }
+                    break;
+                case "CQCJOB":
+                case "CQNJOB":
+                    break;
+            }
+        }
+
+        private void pmRetrievePopUpVal(string inPopupForm)
+        {
+
+            DataRow dtrTemPd = null;
+            switch (inPopupForm.TrimEnd().ToUpper())
+            {
+                case "TXTQCBUDTYPE":
+                case "TXTQNBUDTYPE":
+                    if (this.pofrmGetBudType != null)
+                    {
+                        DataRow dtrPDGRP = this.pofrmGetBudType.RetrieveValue();
+
+                        if (dtrPDGRP != null)
+                        {
+                            this.txtQcBudType.Tag = dtrPDGRP["cRowID"].ToString();
+                            this.txtQcBudType.Text = dtrPDGRP["cCode"].ToString().TrimEnd();
+                            this.txtQnBudType.Text = dtrPDGRP["cName"].ToString().TrimEnd();
+                        }
+                        else
+                        {
+                            this.txtQcBudType.Tag = "";
+                            this.txtQcBudType.Text = "";
+                            this.txtQnBudType.Text = "";
+                        }
+                    }
+                    break;
+                case "GRDVIEW2_CQCJOB":
+                case "GRDVIEW2_CQNJOB":
+                    dtrTemPd = this.gridView2.GetDataRow(this.gridView2.FocusedRowHandle);
+
+                    if (dtrTemPd == null)
+                    {
+                        dtrTemPd = this.dtsDataEnv.Tables[this.mstrTemPd].NewRow();
+                        this.dtsDataEnv.Tables[this.mstrTemPd].Rows.Add(dtrTemPd);
+                    }
+
+                    if (this.pofrmGetJob != null)
+                    {
+                        DataRow dtrJob = this.pofrmGetJob.RetrieveValue();
+                        if (dtrJob != null)
+                        {
+                            dtrTemPd["cJob"] = dtrJob["cRowid"].ToString();
+                            dtrTemPd["cQcJob"] = dtrJob["cCode"].ToString().TrimEnd();
+                            dtrTemPd["cQnJob"] = dtrJob["cName"].ToString().TrimEnd();
+                        }
+                        else
+                        {
+                            dtrTemPd["cJob"] = "";
+                            dtrTemPd["cQcJob"] = "";
+                            dtrTemPd["cQnJob"] = "";
+                        }
+
+                        this.gridView2.UpdateCurrentRow();
+                    }
+                    break;
+
+                case "GRDVIEW2_CQCDEPT":
+                case "GRDVIEW2_CQNDEPT":
+                    dtrTemPd = this.gridView2.GetDataRow(this.gridView2.FocusedRowHandle);
+
+                    if (dtrTemPd == null)
+                    {
+                        dtrTemPd = this.dtsDataEnv.Tables[this.mstrTemPd].NewRow();
+                        this.dtsDataEnv.Tables[this.mstrTemPd].Rows.Add(dtrTemPd);
+                    }
+
+                    if (this.pofrmGetDept != null)
+                    {
+                        DataRow dtrDept = this.pofrmGetDept.RetrieveValue();
+                        if (dtrDept != null)
+                        {
+                            dtrTemPd["cDept"] = dtrDept["cRowid"].ToString();
+                            dtrTemPd["cQcDept"] = dtrDept["cCode"].ToString().TrimEnd();
+                            dtrTemPd["cQnDept"] = dtrDept["cName"].ToString().TrimEnd();
+                        }
+                        else
+                        {
+                            dtrTemPd["cDept"] = "";
+                            dtrTemPd["cQcDept"] = "";
+                            dtrTemPd["cQnDept"] = "";
+                        }
+
+                        this.gridView2.UpdateCurrentRow();
+                    }
+                    break;
+
+                case "GRDVIEW2_CQNUM":
+                    dtrTemPd = this.gridView2.GetDataRow(this.gridView2.FocusedRowHandle);
+
+                    if (dtrTemPd == null)
+                    {
+                        dtrTemPd = this.dtsDataEnv.Tables[this.mstrTemPd].NewRow();
+                        this.dtsDataEnv.Tables[this.mstrTemPd].Rows.Add(dtrTemPd);
+                    }
+
+                    if (this.pofrmGetUM != null)
+                    {
+                        DataRow dtrUM = this.pofrmGetUM.RetrieveValue();
+                        if (dtrUM != null)
+                        {
+                            dtrTemPd["cUOM"] = dtrUM["cRowID"].ToString();
+                            dtrTemPd["cQcUM"] = dtrUM["cCode"].ToString().TrimEnd();
+                            dtrTemPd["cQnUM"] = dtrUM["cName"].ToString().TrimEnd();
+                        }
+                        else
+                        {
+                            dtrTemPd["cUOM"] = "";
+                            dtrTemPd["cQcUM"] = "";
+                            dtrTemPd["cQnUM"] = "";
+                        }
+
+                        this.gridView2.UpdateCurrentRow();
+                    }
+                    break;
+            }
+        }
+
+        private void barMainEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (e.Item.Tag != null)
+            {
+                string strMenuName = e.Item.Tag.ToString();
+                WsToolBar oToolButton = AppEnum.GetToolBarEnum(strMenuName);
+                switch (oToolButton)
+                {
+                    case WsToolBar.Enter:
+                        this.pmEnterForm();
+                        break;
+                    case WsToolBar.Insert:
+                        //if (App.PermissionManager.CheckPermission(AuthenType.CanInsert, App.AppUserID, TASKNAME))
+                        if (App.PermissionManager.CheckPermission(TASKNAME, AuthenType.CanInsert, App.AppUserName, App.AppUserID))
+                        {
+                            this.mFormEditMode = UIHelper.AppFormState.Insert;
+                            this.pmLoadEditPage();
+                        }
+                        else
+                            MessageBox.Show("ไม่มีสิทธิ์ในการเพิ่มข้อมูล !", "Application Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        break;
+                    case WsToolBar.Update:
+                        //if (App.PermissionManager.CheckPermission(AuthenType.CanEdit, App.AppUserID, TASKNAME))
+                        if (App.PermissionManager.CheckPermission(TASKNAME, AuthenType.CanEdit, App.AppUserName, App.AppUserID))
+                        {
+                            this.mFormEditMode = UIHelper.AppFormState.Edit;
+                            this.pmLoadEditPage();
+                        }
+                        else
+                            MessageBox.Show("ไม่มีสิทธิ์ในการแก้ไขข้อมูล !", "Application Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        break;
+                    case WsToolBar.Delete:
+                        //if (App.PermissionManager.CheckPermission(AuthenType.CanDelete, App.AppUserID, TASKNAME))
+                        if (App.PermissionManager.CheckPermission(TASKNAME, AuthenType.CanDelete, App.AppUserName, App.AppUserID))
+                        {
+                            this.pmDeleteData();
+                        }
+                        else
+                            MessageBox.Show("ไม่มีสิทธิ์ในการลบข้อมูล !", "Application Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        break;
+                    case WsToolBar.Search:
+                        this.pmSearchData();
+                        break;
+                    case WsToolBar.Undo:
+                        if (MessageBox.Show("ต้องการออกจากหน้าจอ ?", "Application confirm message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                            this.pmGotoBrowPage();
+                        break;
+                    case WsToolBar.Save:
+                        this.pmSaveData();
+                        break;
+                    case WsToolBar.Refresh:
+                        this.pmRefreshBrowView();
+                        break;
+                }
+
+            }
+        }
+
+        private void pmDeleteData()
+        {
+            string strErrorMsg = "";
+            DataRow dtrBrow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            if (this.gridView1.RowCount == 0 || dtrBrow == null)
+                return;
+
+            this.mstrEditRowID = dtrBrow["cRowID"].ToString();
+            string strDeleteDesc = "(" + dtrBrow["cCode"].ToString().TrimEnd() + ") " + dtrBrow["cDesc"].ToString().TrimEnd();
+            if (!this.pmCheckHasUsed(this.mstrEditRowID, dtrBrow["cCode"].ToString(), ref strErrorMsg))
+            {
+                if (MessageBox.Show("ยืนยันการลบข้อมูลการปันส่วนงบประมาณ : " + strDeleteDesc + " ?", "Application confirm message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    if (this.pmDeleteRow(this.mstrEditRowID, dtrBrow["cCode"].ToString(), ref strErrorMsg))
+                    {
+                        this.dtsDataEnv.Tables[this.mstrBrowViewAlias].Rows.RemoveAt(this.pmGetRowID(this.mstrEditRowID));
+                    }
+                }
+            }
+            else
+            {
+                if (strErrorMsg != "")
+                    MessageBox.Show(strErrorMsg, "Application Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.mstrEditRowID = "";
+        }
+
+        private bool pmCheckHasUsed(string inRowID, string inCode, ref string ioErrorMsg)
+        {
+            return false;
+            //WS.Data.Agents.cDBMSAgent objSQLHelper = new WS.Data.Agents.cDBMSAgent(App.ERPConnectionString, App.DatabaseReside);
+            //Business.Entity.QMasterUM QRefChild = new QMasterUM(App.ConnectionString, App.DatabaseReside);
+            //bool bllHasUsed = QRefChild.HasUsedChildTable(objSQLHelper, inCode, ref ioErrorMsg);
+            //if (bllHasUsed)
+            //{
+            //    ioErrorMsg = "ไม่สามารถลบข้อมูลได้เนื่องจากมีการอ้างอิงถึงใน " + ioErrorMsg;
+            //}
+            //return bllHasUsed;
+        }
+
+        private bool pmDeleteRow(string inRowID, string inCode, ref string ioErrorMsg)
+        {
+            object[] pAPara = null;
+            bool bllIsCommit = false;
+            bool bllResult = false;
+            this.mSaveDBAgent = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+            this.mSaveDBAgent.AppID = App.AppID;
+            this.mdbConn = this.mSaveDBAgent.GetDBConnection();
+
+            this.mSaveDBAgent2 = new WS.Data.Agents.cDBMSAgent(App.ERPConnectionString, App.DatabaseReside);
+            this.mSaveDBAgent2.AppID = App.AppID;
+            this.mdbConn2 = this.mSaveDBAgent2.GetDBConnection();
+
+            try
+            {
+
+                this.mdbConn.Open();
+                this.mdbTran = this.mdbConn.BeginTransaction(IsolationLevel.ReadUncommitted);
+
+                this.mdbConn2.Open();
+                this.mdbTran2 = this.mdbConn2.BeginTransaction(IsolationLevel.ReadUncommitted);
+
+                string strErrorMsg = "";
+
+                pAPara = new object[1] { inRowID };
+                this.mSaveDBAgent.BatchSQLExec("delete from " + this.mstrITable + " where cBGAllocHD = ?", pAPara, ref strErrorMsg, this.mdbConn, this.mdbTran);
+
+                pAPara = new object[1] { inRowID };
+                this.mSaveDBAgent.BatchSQLExec("delete from " + this.mstrRefTable + " where cRowID = ?", pAPara, ref strErrorMsg, this.mdbConn, this.mdbTran);
+
+                this.mdbTran.Commit();
+                this.mdbTran2.Commit();
+                bllIsCommit = true;
+
+                WS.Data.Agents.cDBMSAgent objSQLHelper = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+                KeepLogAgent.KeepLog(objSQLHelper, KeepLogType.Delete, TASKNAME, inCode, "", App.FMAppUserID, App.AppUserName);
+
+                bllResult = true;
+            }
+            catch (Exception ex)
+            {
+                ioErrorMsg = ex.Message;
+                bllResult = false;
+
+                if (!bllIsCommit)
+                {
+                    this.mdbTran.Rollback();
+                    this.mdbTran2.Rollback();
+                }
+                App.WriteEventsLog(ex);
+            }
+            finally
+            {
+                this.mdbConn.Close();
+                this.mdbConn2.Close();
+            }
+            return bllResult;
+        }
+
+        private void pmSearchData()
+        {
+        }
+
+
+        private void pmEnterForm()
+        {
+            if ((this.mFormActiveMode == FormActiveMode.PopUp || this.mFormActiveMode == FormActiveMode.Report)
+                && this.pgfMainEdit.SelectedTabPageIndex == xd_PAGE_BROWSE)
+            {
+                this.mbllPopUpResult = true;
+                this.Hide();
+            }
+        }
+
+        private int pmGetRowID(string inTag)
+        {
+            for (int intCnt = 0; intCnt < this.dtsDataEnv.Tables[this.mstrBrowViewAlias].Rows.Count; intCnt++)
+            {
+                if (this.dtsDataEnv.Tables[this.mstrBrowViewAlias].Rows[intCnt]["cRowID"].ToString().TrimEnd() == inTag)
+                    return intCnt;
+            }
+            return -1;
+        }
+
+        private void pmSaveData()
+        {
+            string strErrorMsg = "";
+            if (this.pmValidBeforeSave(ref strErrorMsg))
+            {
+                UIBase.WaitWind("กำลังบันทึกข้อมูล...");
+                this.pmUpdateRecord();
+                //dlg.WaitWind(WsWinUtil.GetStringfromCulture(this.WsLocale, new string[] { "บันทึกเรียบร้อย", "Save Complete" }), 500);
+                UIBase.WaitWind("บันทึกเรียบร้อย");
+                if (this.mFormEditMode == UIHelper.AppFormState.Edit)
+                    this.pmGotoBrowPage();
+                else
+                    this.pmInsertLoop();
+
+                UIBase.WaitClear();
+            }
+			if (strErrorMsg != string.Empty)
+            {
+                MessageBox.Show(strErrorMsg, "Application Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool pmValidBeforeSave(ref string ioErrorMsg)
+        {
+            bool bllResult = true;
+            if (this.txtCode.Text.TrimEnd() == string.Empty)
+            {
+                if (MessageBox.Show("ยังไม่ได้ระบุรหัสการปันส่วนงบประมาณ ต้องการให้เครื่อง Running ให้หรือไม่ ?", "Application confirm message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.pmRunCode();
+                }
+            }
+
+            if (this.txtCode.Text.TrimEnd() == string.Empty)
+            {
+                ioErrorMsg = "ยังไม่ได้ระบุ รหัสการปันส่วนงบประมาณ";
+                this.txtCode.Focus();
+                return false;
+            }
+            if (this.txtDate.DateTime.Year != this.mintBGYear)
+            {
+                ioErrorMsg = "ระบุวันที่ไม่สอดคล้องกับปีงบประมาณ กรุณาตรวจสอบอีกครั้ง !";
+                this.txtDate.Focus();
+                return false;
+            }
+            else if ((this.mFormEditMode == UIHelper.AppFormState.Insert || this.mstrOldCode.TrimEnd() != this.txtCode.Text.TrimEnd())
+                && !this.pmIsValidateCode(new object[] { App.ActiveCorp.RowID, this.txtCode.Text.TrimEnd() }))
+            {
+                ioErrorMsg = "รหัสการปันส่วนงบประมาณซ้ำ";
+                this.txtCode.Focus();
+                return false;
+            }
+            else
+                bllResult = true;
+
+            return bllResult;
+        }
+
+        private bool pmRunCode()
+        {
+            //this.txtCode.Text = this.mobjTabRefer.RunCode(new object[] { App.ActiveCorp.RowID, this.mstrBranchID }, this.txtCode.MaxLength);
+
+            string strErrorMsg = "";
+            string strLastRunCode = "";
+            int intCodeLen = 0;
+            int intRunCode = 1;
+            int inMaxLength = this.txtCode.Properties.MaxLength;
+            WS.Data.Agents.cDBMSAgent objSQLHelper = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+            objSQLHelper.SetPara(new object[] { App.ActiveCorp.RowID });
+            if (objSQLHelper.SQLExec(ref this.dtsDataEnv, "QRunCode", this.mstrRefTable, "select cCode from " + this.mstrRefTable + " where cCorp = ? and cCode < ':' order by cCode desc", ref strErrorMsg))
+            {
+                strLastRunCode = this.dtsDataEnv.Tables["QRunCode"].Rows[0]["CCODE"].ToString().Trim();
+                try
+                {
+                    intRunCode = Convert.ToInt32(strLastRunCode) + 1;
+                }
+                catch (Exception ex)
+                {
+                    strErrorMsg = ex.Message.ToString();
+                    intRunCode++;
+                }
+            }
+            intCodeLen = (strLastRunCode.Length > 0 ? strLastRunCode.Length : inMaxLength);
+            this.txtCode.Text = intRunCode.ToString(StringHelper.Replicate("0", intCodeLen));
+
+            return true;
+        }
+
+        private bool pmIsValidateCode(object[] inPrefixPara)
+        {
+            bool bllResult = true;
+            string strErrorMsg = "";
+            WS.Data.Agents.cDBMSAgent objSQLHelper = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+            if (objSQLHelper.SetPara(inPrefixPara)
+                && objSQLHelper.SQLExec(ref this.dtsDataEnv, "QChkRow", this.mstrRefTable, "select cCode from " + this.mstrRefTable + " where cCorp = ? and cCode = ?", ref strErrorMsg))
+            {
+                bllResult = false;
+            }
+            return bllResult;
+        }
+
+        private void pmUpdateRecord()
+        {
+            string strErrorMsg = "";
+            bool bllIsNewRow = false;
+            bool bllIsCommit = false;
+            int intRevise = 0;
+
+            WS.Data.Agents.cDBMSAgent objSQLHelper = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+
+            //DataRow dtrSaveInfo = this.dtsDataEnv.Tables[this.mstrRefTable].NewRow();
+            DataRow dtrSaveInfo = null;
+            if (this.mFormEditMode == UIHelper.AppFormState.Insert
+                || (objSQLHelper.SetPara(new object[] { this.mstrEditRowID })
+                && !objSQLHelper.SQLExec(ref this.dtsDataEnv, "QChkRow", this.mstrRefTable, "select cRowID from " + this.mstrRefTable + " where cRowID = ?", ref strErrorMsg)))
+            {
+                bllIsNewRow = true;
+                dtrSaveInfo = this.dtsDataEnv.Tables[this.mstrRefTable].NewRow();
+                if (this.mstrEditRowID == string.Empty)
+                {
+                    WS.Data.Agents.cConn objConn = WS.Data.Agents.cConn.GetInStance();
+                    this.mstrEditRowID = objConn.RunRowID(this.mstrRefTable);
+                }
+                dtrSaveInfo["cRowID"] = this.mstrEditRowID;
+                dtrSaveInfo["cCreateBy"] = App.FMAppUserID;
+
+                this.dtsDataEnv.Tables[this.mstrRefTable].Rows.Add(dtrSaveInfo);
+                intRevise = -1;
+            }
+            else
+            {
+                dtrSaveInfo = this.dtsDataEnv.Tables[this.mstrRefTable].Rows[0];
+                string strRevise = dtrSaveInfo["cRevise"].ToString();
+                intRevise = (strRevise.Trim() == "" ? 0 : Convert.ToInt32(strRevise));
+
+            }
+
+            intRevise++;
+            dtrSaveInfo["cCorp"] = App.ActiveCorp.RowID;
+            dtrSaveInfo["cBranch"] = this.mstrBranch;
+            dtrSaveInfo["cBGBook"] = this.mstrBGBook;
+            //dtrSaveInfo["cBGYear"] = this.mintBGYear.ToString("0000");
+            dtrSaveInfo["nBGYear"] = this.mintBGYear;
+            dtrSaveInfo["cCode"] = this.txtCode.Text.TrimEnd();
+            dtrSaveInfo["dDate"] = this.txtDate.DateTime.Date;
+            dtrSaveInfo["cDesc"] = this.txtDesc.Text.TrimEnd();
+            dtrSaveInfo["cApprover"] = this.txtApprover.Text.TrimEnd();
+            dtrSaveInfo["cRevise"] = intRevise.ToString("##");
+            dtrSaveInfo["cBgType"] = this.txtQcBudType.Tag.ToString();
+            dtrSaveInfo["nBGAmt"] = Convert.ToDecimal(this.txtBGAmt.Value);
+
+            dtrSaveInfo["cLastUpdBy"] = App.FMAppUserID.TrimEnd();
+            dtrSaveInfo["dLastUpdBy"] = objSQLHelper.GetDBServerDateTime(); ;
+
+            this.mSaveDBAgent = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+			this.mSaveDBAgent.AppID = App.AppID;
+			this.mdbConn = this.mSaveDBAgent.GetDBConnection();
+
+            try
+            {
+
+                this.mdbConn.Open();
+                this.mdbTran = this.mdbConn.BeginTransaction(IsolationLevel.ReadUncommitted);
+
+                string strSQLUpdateStr = "";
+                object[] pAPara = null;
+                cDBMSAgent.GenUpdateSQLString(dtrSaveInfo, "CROWID", bllIsNewRow, ref strSQLUpdateStr, ref pAPara);
+
+                this.mSaveDBAgent.BatchSQLExec(strSQLUpdateStr, pAPara, ref strErrorMsg, this.mdbConn, this.mdbTran);
+
+                this.pmUpdateBudAllocIT();
+
+                this.mdbTran.Commit();
+                bllIsCommit = true;
+
+                if (this.mFormEditMode == UIHelper.AppFormState.Insert)
+                {
+                    KeepLogAgent.KeepLog(objSQLHelper, KeepLogType.Insert, TASKNAME, this.txtCode.Text, "", App.FMAppUserID, App.AppUserName);
+                }
+                else if (this.mFormEditMode == UIHelper.AppFormState.Edit)
+                {
+                    if (this.mstrOldCode == this.txtCode.Text )
+                    {
+                        KeepLogAgent.KeepLog(objSQLHelper, KeepLogType.Update, TASKNAME, this.txtCode.Text, "", App.FMAppUserID, App.AppUserName);
+                    }
+                    else 
+                    {
+                        KeepLogAgent.KeepLogChgValue(objSQLHelper, KeepLogType.Update, TASKNAME, this.txtCode.Text, "", App.FMAppUserID, App.AppUserName, this.mstrOldCode, this.mstrOldName);
+                    }
+                }
+
+			}
+			catch (Exception ex)
+			{
+                if (!bllIsCommit)
+                {
+                    this.mdbTran.Rollback();
+                }
+                App.WriteEventsLog(ex);
+#if xd_RUNMODE_DEBUG
+				MessageBox.Show("Message : " + ex.Message + "\n" + ex.Source + "\n" + ex.StackTrace);
+#endif
+			}
+			finally
+			{
+				this.mdbConn.Close();
+			}
+
+        }
+
+        private void pmUpdateBudAllocIT()
+        {
+            string strErrorMsg = "";
+            object[] pAPara = null;
+
+            foreach (DataRow dtrTemPd in this.dtsDataEnv.Tables[this.mstrTemPd].Rows)
+            {
+                bool bllIsNewRow = false;
+
+                DataRow dtrBudCI = null;
+                if (dtrTemPd["cJob"].ToString().TrimEnd() != string.Empty)
+                {
+
+                    string strRowID = "";
+                    if ((dtrTemPd["cRowID"].ToString().TrimEnd() == string.Empty)
+                        && (!this.mSaveDBAgent.BatchSQLExec("select * from " + this.mstrITable + " where cRowID = ?", new object[1] { dtrTemPd["cRowID"].ToString() }, ref strErrorMsg, this.mdbConn, this.mdbTran)))
+                    {
+                        this.mSaveDBAgent.BatchSQLExec(ref this.dtsDataEnv, this.mstrITable, this.mstrITable, "select * from " + this.mstrITable + " where 0=1", null, ref strErrorMsg, this.mdbConn, this.mdbTran);
+                        dtrBudCI = this.dtsDataEnv.Tables[this.mstrITable].NewRow();
+
+                        strRowID = App.mRunRowID(this.mstrITable);
+                        bllIsNewRow = true;
+                        //dtrBudCI["cCreateAp"] = App.AppID;
+                        dtrTemPd["cRowID"] = strRowID;
+                        dtrBudCI["cRowID"] = dtrTemPd["cRowID"].ToString();
+                    }
+                    else
+                    {
+                        this.mSaveDBAgent.BatchSQLExec(ref this.dtsDataEnv, this.mstrITable, this.mstrITable, "select * from " + this.mstrITable + " where cRowID = ?", new object[1] { dtrTemPd["cRowID"].ToString() }, ref strErrorMsg, this.mdbConn, this.mdbTran);
+                        dtrBudCI = this.dtsDataEnv.Tables[this.mstrITable].Rows[0];
+
+                        strRowID = dtrTemPd["cRowID"].ToString();
+                        bllIsNewRow = false;
+                    }
+
+                    this.pmReplRecordBudAllocIT(bllIsNewRow, dtrTemPd, ref dtrBudCI);
+
+                    string strSQLUpdateStr = "";
+                    cDBMSAgent.GenUpdateSQLString(dtrBudCI, "CROWID", bllIsNewRow, ref strSQLUpdateStr, ref pAPara);
+                    this.mSaveDBAgent.BatchSQLExec(strSQLUpdateStr, pAPara, ref strErrorMsg, this.mdbConn, this.mdbTran);
+
+                }
+                else
+                {
+
+                    //Delete RefProd
+                    if (dtrTemPd["cRowID"].ToString().TrimEnd() != string.Empty)
+                    {
+
+                        pAPara = new object[] { dtrTemPd["cRowID"].ToString() };
+                        this.mSaveDBAgent.BatchSQLExec("delete from " + this.mstrITable + " where CROWID = ?", pAPara, ref strErrorMsg, this.mdbConn, this.mdbTran);
+
+                    }
+
+                }
+
+            }
+        }
+
+        private bool pmReplRecordBudAllocIT(bool inState, DataRow inTemPd, ref DataRow ioRefProd)
+        {
+            bool bllIsNewRec = inState;
+
+            DataRow dtrBudCI = ioRefProd;
+            DataRow dtrBudCH = this.dtsDataEnv.Tables[this.mstrRefTable].Rows[0];
+
+            dtrBudCI["cCorp"] = App.ActiveCorp.RowID;
+            dtrBudCI["cBranch"] = this.mstrBranch;
+            dtrBudCI["nBGYear"] = this.mintBGYear;
+            dtrBudCI["cBGAllocHD"] = dtrBudCH["cRowID"].ToString();
+            dtrBudCI["cJob"] = inTemPd["cJob"].ToString();
+            dtrBudCI["cRemark"] = inTemPd["cRemark"].ToString().TrimEnd();
+            dtrBudCI["nAllocPcn"] = Convert.ToDecimal(inTemPd["nAllocPcn"]);
+            dtrBudCI["nQty"] = Convert.ToDecimal(inTemPd["nQty"]);
+            dtrBudCI["cDept"] = inTemPd["cDept"].ToString();
+            dtrBudCI["cUOM"] = inTemPd["cUOM"].ToString();
+            dtrBudCI["cRemark"] = inTemPd["cRemark"].ToString().TrimEnd();
+            dtrBudCI["cType"] = inTemPd["cType"].ToString();
+
+            //dtrBudCI["cSeq"] = StringHelper.ConvertToBase64(Convert.ToInt32(inTemPd["nRecNo"]), 2);
+
+            return true;
+        }
+
+
+        private void pmCreateTem()
+        {
+
+            DataTable dtbTemPdVer = new DataTable(this.mstrTemPd);
+
+            dtbTemPdVer.Columns.Add("cRowID", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("nRecNo", System.Type.GetType("System.Int32"));
+            dtbTemPdVer.Columns.Add("cJob", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cQcJob", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cQnJob", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cRemark", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("nAllocPcn", System.Type.GetType("System.Decimal"));
+            dtbTemPdVer.Columns.Add("nQty", System.Type.GetType("System.Decimal"));
+            dtbTemPdVer.Columns.Add("cUOM", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cQcUM", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cQnUM", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cDept", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cQcDept", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cQnDept", System.Type.GetType("System.String"));
+            dtbTemPdVer.Columns.Add("cType", System.Type.GetType("System.String"));
+
+            dtbTemPdVer.Columns["cRowID"].DefaultValue = "";
+            dtbTemPdVer.Columns["cJob"].DefaultValue = "";
+            dtbTemPdVer.Columns["cQcJob"].DefaultValue = "";
+            dtbTemPdVer.Columns["cQnJob"].DefaultValue = "";
+            dtbTemPdVer.Columns["cRemark"].DefaultValue = "";
+            dtbTemPdVer.Columns["nAllocPcn"].DefaultValue = 0;
+            dtbTemPdVer.Columns["nQty"].DefaultValue = 0;
+            dtbTemPdVer.Columns["cUOM"].DefaultValue = "";
+            dtbTemPdVer.Columns["cQcUM"].DefaultValue = "";
+            dtbTemPdVer.Columns["cQnUM"].DefaultValue = "";
+            dtbTemPdVer.Columns["cDept"].DefaultValue = "";
+            dtbTemPdVer.Columns["cQcDept"].DefaultValue = "";
+            dtbTemPdVer.Columns["cQnDept"].DefaultValue = "";
+            dtbTemPdVer.Columns["cType"].DefaultValue = "";
+
+            this.dtsDataEnv.Tables.Add(dtbTemPdVer);
+
+        }
+
+        private void pmLoadEditPage()
+        {
+            this.pmSetPageStatus(true);
+            this.pgfMainEdit.TabPages[0].PageEnabled = false;
+            this.pgfMainEdit.SelectedTabPageIndex = 1;
+            this.pmBlankFormData();
+            this.txtCode.Focus();
+            if (this.mFormEditMode == UIHelper.AppFormState.Edit)
+            {
+                this.pmLoadFormData();
+            }
+        }
+
+        private void pmBlankFormData()
+        {
+
+            string strErrorMsg = "";
+            WS.Data.Agents.cDBMSAgent pobjSQLUtil = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+            pobjSQLUtil.SQLExec(ref this.dtsDataEnv, this.mstrRefTable, this.mstrRefTable, "select * from " + this.mstrRefTable + " where 0=1", ref strErrorMsg);
+
+            this.mstrEditRowID = "";
+
+            this.txtCode.Text = "";
+            this.txtDate.DateTime = DateTime.Now;
+            this.txtRevise.Text = "";
+            this.txtDesc.Text = "";
+            this.txtApprover.Text = "";
+            this.txtQcBudType.Tag = ""; this.txtQcBudType.Text = ""; this.txtQnBudType.Text = "";
+            this.txtBGAmt.Value = 0;
+
+            this.dtsDataEnv.Tables[this.mstrTemPd].Rows.Clear();
+
+            this.gridView2.FocusedColumn = this.gridView2.Columns["cQcJob"];
+
+        }
+
+        private void pmLoadFormData()
+        {
+
+            DataRow dtrBrow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            if (dtrBrow != null)
+            {
+                this.mstrEditRowID = dtrBrow["cRowID"].ToString();
+
+                string strErrorMsg = "";
+                WS.Data.Agents.cDBMSAgent pobjSQLUtil = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+                pobjSQLUtil.SetPara(new object[] { this.mstrEditRowID });
+                if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, this.mstrRefTable, this.mstrRefTable, "select * from " + this.mstrRefTable + " where cRowID = ?", ref strErrorMsg))
+                {
+                    DataRow dtrLoadForm = this.dtsDataEnv.Tables[this.mstrRefTable].Rows[0];
+
+                    this.txtCode.Text = dtrLoadForm["cCode"].ToString().TrimEnd();
+                    this.txtDate.DateTime = Convert.ToDateTime(dtrLoadForm["dDate"]);
+                    this.txtRevise.Text = dtrLoadForm["cRevise"].ToString().TrimEnd();
+                    this.txtDesc.Text = dtrLoadForm["cDesc"].ToString().TrimEnd();
+                    this.txtApprover.Text = dtrLoadForm["cApprover"].ToString().TrimEnd();
+                    this.txtBGAmt.Value = Convert.ToDecimal(dtrLoadForm["nBGAmt"]);
+
+                    this.txtQcBudType.Tag = dtrLoadForm["cBgType"].ToString();
+                    pobjSQLUtil.SetPara(new object[] { this.txtQcBudType.Tag.ToString() });
+                    if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, "QBudType", "BUDTYPE", "select * from BGTYPE where CROWID = ?", ref strErrorMsg))
+                    {
+                        DataRow dtrBudType = this.dtsDataEnv.Tables["QBudType"].Rows[0];
+                        this.txtQcBudType.Text = dtrBudType["cCode"].ToString().TrimEnd();
+                        this.txtQnBudType.Text = dtrBudType["cName"].ToString().TrimEnd();
+                    }
+
+                    this.pmLoadBudAllocIT();
+                }
+                this.pmLoadOldVar();
+            }
+        }
+
+        private void pmLoadOldVar()
+        {
+            this.mstrOldCode = this.txtCode.Text;
+        }
+
+        private void pmLoadBudAllocIT()
+        {
+            string strErrorMsg = "";
+            WS.Data.Agents.cDBMSAgent pobjSQLUtil = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+
+            int intRow = 0;
+            pobjSQLUtil.SetPara(new object[] { this.mstrEditRowID });
+            if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, "QBudCI", "BUDCI", "select * from " + this.mstrITable + " where cBGAllocHD = ? order by cSeq", ref strErrorMsg))
+            {
+                foreach (DataRow dtrBudCI in this.dtsDataEnv.Tables["QBudCI"].Rows)
+                {
+                    DataRow dtrNewRow = this.dtsDataEnv.Tables[this.mstrTemPd].NewRow();
+
+                    intRow++;
+                    dtrNewRow["nRecNo"] = intRow;
+                    dtrNewRow["cRowID"] = dtrBudCI["cRowID"].ToString();
+                    dtrNewRow["cJob"] = dtrBudCI["cJob"].ToString();
+                    dtrNewRow["cRemark"] = dtrBudCI["cRemark"].ToString().TrimEnd();
+                    dtrNewRow["cDept"] = dtrBudCI["cDept"].ToString();
+                    dtrNewRow["cUOM"] = dtrBudCI["cUOM"].ToString();
+                    dtrNewRow["nAllocPcn"] = Convert.ToDecimal(dtrBudCI["nAllocPcn"]);
+                    dtrNewRow["nQty"] = Convert.ToDecimal(dtrBudCI["nQty"]);
+                    dtrNewRow["cType"] = dtrBudCI["cType"].ToString();
+
+                    pobjSQLUtil.SetPara(new object[] { dtrNewRow["cJob"].ToString() });
+                    if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, "QJob", "JOB", "select * from EMJOB where cRowID = ?", ref strErrorMsg))
+                    {
+                        dtrNewRow["cQcJob"] = this.dtsDataEnv.Tables["QJob"].Rows[0]["cCode"].ToString().TrimEnd();
+                        dtrNewRow["cQnJob"] = this.dtsDataEnv.Tables["QJob"].Rows[0]["cName"].ToString().TrimEnd();
+                    }
+
+                    pobjSQLUtil.SetPara(new object[] { dtrNewRow["cUOM"].ToString() });
+                    if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, "QUM", "UM", "select * from EMUOM where cRowID = ?", ref strErrorMsg))
+                    {
+                        dtrNewRow["cQcUM"] = this.dtsDataEnv.Tables["QUM"].Rows[0]["cCode"].ToString().TrimEnd();
+                        dtrNewRow["cQnUM"] = this.dtsDataEnv.Tables["QUM"].Rows[0]["cName"].ToString().TrimEnd();
+                    }
+
+                    pobjSQLUtil.SetPara(new object[] { dtrNewRow["cDept"].ToString() });
+                    if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, "QDept", "DEPT", "select * from EMDEPT where cRowID = ?", ref strErrorMsg))
+                    {
+                        dtrNewRow["cQcDept"] = this.dtsDataEnv.Tables["QDept"].Rows[0]["cCode"].ToString().TrimEnd();
+                        dtrNewRow["cQnDept"] = this.dtsDataEnv.Tables["QDept"].Rows[0]["cName"].ToString().TrimEnd();
+                    }
+
+                    this.dtsDataEnv.Tables[this.mstrTemPd].Rows.Add(dtrNewRow);
+
+                }
+            }
+
+        }
+        
+        private void pmInsertLoop()
+        {
+            if (this.mFormActiveMode != FormActiveMode.PopUp
+                || this.mFormActiveMode != FormActiveMode.Report)
+                this.pmLoadEditPage();
+            else
+                this.pmGotoBrowPage();
+        }
+
+        private void frmBudAllocate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt | e.Control | e.Shift)
+                return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    this.pmEnterForm();
+                    break;
+                case Keys.PageUp:
+                    if (this.pgfMainEdit.SelectedTabPageIndex > xd_PAGE_BROWSE)
+                        this.pgfMainEdit.SelectedTabPageIndex = (this.pgfMainEdit.SelectedTabPageIndex + 1 > this.pgfMainEdit.TabPages.Count - 1 ? xd_PAGE_EDIT1 : this.pgfMainEdit.SelectedTabPageIndex + 1);
+                    break;
+                case Keys.PageDown:
+                    if (this.pgfMainEdit.SelectedTabPageIndex > xd_PAGE_BROWSE)
+                        this.pgfMainEdit.SelectedTabPageIndex = (this.pgfMainEdit.SelectedTabPageIndex - 1 <= xd_PAGE_BROWSE ? this.pgfMainEdit.TabPages.Count - 1 : this.pgfMainEdit.SelectedTabPageIndex - 1);
+                    break;
+                case Keys.Escape:
+                    if (this.pgfMainEdit.SelectedTabPageIndex != xd_PAGE_BROWSE)
+                    {
+                        if (MessageBox.Show("ต้องการออกจากหน้าจอ ?", "Application confirm message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            this.pmGotoBrowPage();
+                        }
+                    }
+                    else
+                    {
+                        this.mbllPopUpResult = false;
+                        if (this.mFormActiveMode == FormActiveMode.Edit)
+                        {
+                            this.mbllFilterResult = false;
+                            this.pmInitPopUpDialog("FILTER");
+                            if (!this.mbllFilterResult)
+                            {
+                                this.Close();
+                            }
+                            //this.Close();
+                        }
+                        else
+                            this.Hide();
+                    }
+                    break;
+            }
+        
+        }
+
+        private void gridView1_EndSorting(object sender, EventArgs e)
+        {
+            this.pmSetSortKey(this.gridView1.SortedColumns[0].FieldName, false);
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DataRow dtrBrow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            if (dtrBrow != null)
+            {
+                this.txtFooter.Text = "สร้างโดย LOGIN : " + dtrBrow["CLOGIN_ADD"].ToString().TrimEnd() + " วันที่ : " + Convert.ToDateTime(dtrBrow["dCreate"]).ToString("dd/MM/yy hh:mm:ss");
+                this.txtFooter.Text += "\r\nแก้ไขล่าสุดโดย LOGIN : " + dtrBrow["CLOGIN_UPD"].ToString().TrimEnd() + " วันที่ : " + Convert.ToDateTime(dtrBrow["dLastUpdBy"]).ToString("dd/MM/yy hh:mm:ss");
+            }
+            else 
+            {
+                this.txtFooter.Text = "";
+            }
+        }
+
+        public bool ValidateField(string inSearchStr, string inOrderBy, bool inForcePopUp)
+        {
+            bool bllIsVField = true;
+            this.mbllPopUpResult = false;
+
+            inOrderBy = inOrderBy.ToUpper();
+            if (inOrderBy.ToUpper() == "CCODE")
+                inSearchStr = inSearchStr.PadRight(this.txtCode.Properties.MaxLength);
+
+            if (this.mstrSortKey != inOrderBy)
+            {
+                this.mstrSortKey = inOrderBy;
+                this.pmSetSortKey(this.mstrSortKey, true);
+            }
+
+            if (this.mstrSearchStr != inSearchStr || this.mbllIsFormQuery == false)
+            {
+                string strSearch = inSearchStr.TrimEnd();
+                if (strSearch == SysDef.gc_DEFAULT_VALDATEKEY_PREFIX_STAR ||
+                    strSearch == SysDef.gc_DEFAULT_VALDATEKEY_PREFIX_2SLASH)
+                {
+                    strSearch = "";
+                }
+
+                this.mstrSearchStr = "%" + strSearch + "%";
+                this.pmRefreshBrowView();
+            }
+
+            int intSeekVal = this.gridView1.LocateByValue(0, this.gridView1.Columns[this.mstrSortKey], inSearchStr);
+            bllIsVField = (intSeekVal < 0);
+
+            this.mbllIsShowDialog = false;
+            if (inForcePopUp || bllIsVField)
+            {
+                this.gridView1.StartIncrementalSearch(inSearchStr.TrimEnd());
+                this.ShowDialog();
+                this.mbllIsShowDialog = true;
+            }
+            else
+            {
+                this.gridView1.FocusedRowHandle = intSeekVal;
+                this.mbllPopUpResult = true;
+            }
+            return this.mbllPopUpResult;
+        }
+
+        public DataRow RetrieveValue()
+        {
+
+            DataRow dtrBrow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            if (dtrBrow == null) return null;
+            
+            string strErrorMsg = "";
+            WS.Data.Agents.cDBMSAgent pobjSQLUtil = new WS.Data.Agents.cDBMSAgent(App.ConnectionString, App.DatabaseReside);
+            pobjSQLUtil.SetPara(new object[1] { dtrBrow["cRowID"].ToString() });
+            if (pobjSQLUtil.SQLExec(ref this.dtsDataEnv, "QVFLD_Table", this.mstrRefTable, "select * from " + this.mstrRefTable + " where cRowID = ? ", ref strErrorMsg))
+            {
+                return this.dtsDataEnv.Tables["QVFLD_Table"].Rows[0];
+            }
+            return null;
+        }
+
+        private void txtQcBudType_Validating(object sender, CancelEventArgs e)
+        {
+            DevExpress.XtraEditors.ButtonEdit txtPopUp = (DevExpress.XtraEditors.ButtonEdit)sender;
+            string strOrderBy = txtPopUp.Name.ToUpper() == "TXTQCBUDTYPE" ? "CCODE" : "CNAME";
+
+            if (txtPopUp.Text == "")
+            {
+                this.txtQcBudType.Tag = "";
+                this.txtQcBudType.Text = "";
+                this.txtQnBudType.Text = "";
+            }
+            else
+            {
+                this.pmInitPopUpDialog("BUDTYPE");
+                e.Cancel = !this.pofrmGetBudType.ValidateField(txtPopUp.Text, strOrderBy, false);
+                if (this.pofrmGetBudType.PopUpResult)
+                {
+                    this.pmRetrievePopUpVal(txtPopUp.Name);
+                }
+                else
+                {
+                    txtPopUp.Text = txtPopUp.OldEditValue.ToString();
+                }
+            }
+
+        }
+
+        private void pmGridPopUpButtonClick(string inKeyField)
+        {
+            string strOrderBy = "CCODE";
+            switch (inKeyField.ToUpper())
+            {
+                case "CQCJOB":
+                case "CQNJOB":
+
+                    strOrderBy = (inKeyField.ToUpper() == "CQCJOB" ? "CCODE" : "CNAME");
+                    this.pmInitPopUpDialog("JOB");
+                    this.pofrmGetJob.ValidateField("", strOrderBy, true);
+                    if (this.pofrmGetJob.PopUpResult)
+                    {
+                        this.pmRetrievePopUpVal("GRDVIEW2_"+inKeyField);
+                    }
+                    break;
+
+                case "CQCDEPT":
+                case "CQNDEPT":
+                    
+                    strOrderBy = (inKeyField.ToUpper() == "CQCDEPT" ? "CCODE" : "CNAME");
+                    this.pmInitPopUpDialog("DEPT");
+                    this.pofrmGetDept.ValidateField("", strOrderBy, true);
+                    if (this.pofrmGetDept.PopUpResult)
+                    {
+                        this.pmRetrievePopUpVal("GRDVIEW2_" + inKeyField);
+                    }
+                    break;
+
+                case "CQCUM":
+                case "CQNUM":
+                    
+                    strOrderBy = (inKeyField.ToUpper() == "CQCUM" ? "CCODE" : "CNAME");
+                    this.pmInitPopUpDialog("UM");
+                    this.pofrmGetUM.ValidateField("", strOrderBy, true);
+                    if (this.pofrmGetUM.PopUpResult)
+                    {
+                        this.pmRetrievePopUpVal("GRDVIEW2_" + inKeyField);
+                    }
+                    break;
+
+            }
+        }
+
+        private void grcColumn_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            this.pmGridPopUpButtonClick(gridView2.FocusedColumn.FieldName);
+        }
+
+        private void grcColumn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt | e.Control | e.Shift)
+                return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    this.pmGridPopUpButtonClick(gridView2.FocusedColumn.FieldName);
+                    break;
+            }
+        }
+
+        private void gridView2_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            if (e.Value == null)
+                return;
+
+            ColumnView view = this.grdTemPd.MainView as ColumnView;
+
+            string strValue = "";
+            string strCol = gridView2.FocusedColumn.FieldName;
+            DataRow dtrTemPd = this.gridView2.GetDataRow(this.gridView2.FocusedRowHandle);
+
+            switch (strCol.ToUpper())
+            {
+                case "CQCJOB":
+                case "CQNJOB":
+
+                    strValue = e.Value.ToString();
+                    if (strValue.Trim() == string.Empty)
+                    {
+                        e.Value = "";
+                        dtrTemPd["cJob"] = "";
+                        dtrTemPd["cQcJob"] = "";
+                        dtrTemPd["cQnJob"] = "";
+                    }
+                    else
+                    {
+                        this.pmInitPopUpDialog("JOB");
+                        string strOrderBy = (strCol.ToUpper() == "CQCJOB" ? "CCODE" : "CNAME");
+                        e.Valid = !this.pofrmGetJob.ValidateField(strValue, strOrderBy, false);
+
+                        if (this.pofrmGetJob.PopUpResult)
+                        {
+                            e.Valid = true;
+                            this.gridView2.UpdateCurrentRow();
+                            this.pmRetrievePopUpVal("GRDVIEW2_" + strCol);
+                            e.Value = (strCol.ToUpper() == "CQCJOB" ? dtrTemPd["cQcJob"].ToString().TrimEnd() : dtrTemPd["cQnJob"].ToString().TrimEnd());
+                        }
+                        else
+                        {
+                            e.Value = "";
+                            dtrTemPd["cJob"] = "";
+                            dtrTemPd["cQcJob"] = "";
+                            dtrTemPd["cQnJob"] = "";
+                        }
+                    }
+                    break;
+
+                case "CQCDEPT":
+                case "CQNDEPT":
+
+                    strValue = e.Value.ToString();
+                    if (strValue.Trim() == string.Empty)
+                    {
+                        e.Value = "";
+                        dtrTemPd["cDept"] = "";
+                        dtrTemPd["cQcDept"] = "";
+                        dtrTemPd["cQnDept"] = "";
+                    }
+                    else
+                    {
+                        this.pmInitPopUpDialog("DEPT");
+                        string strOrderBy = (strCol.ToUpper() == "CQCDEPT" ? "CCODE" : "CNAME");
+                        e.Valid = !this.pofrmGetDept.ValidateField(strValue, strOrderBy, false);
+
+                        if (this.pofrmGetDept.PopUpResult)
+                        {
+                            e.Valid = true;
+                            this.gridView2.UpdateCurrentRow();
+                            this.pmRetrievePopUpVal("GRDVIEW2_" + strCol);
+                            e.Value = (strCol.ToUpper() == "CQCDEPT" ? dtrTemPd["cQcDept"].ToString().TrimEnd() : dtrTemPd["cQnDept"].ToString().TrimEnd());
+                        }
+                        else
+                        {
+                            e.Value = "";
+                            dtrTemPd["cDept"] = "";
+                            dtrTemPd["cQcDept"] = "";
+                            dtrTemPd["cQnDept"] = "";
+                        }
+                    }
+                    break;
+
+                case "CQNUM":
+
+                    strValue = e.Value.ToString();
+                    if (strValue.Trim() == string.Empty)
+                    {
+                        e.Value = "";
+                        dtrTemPd["cUOM"] = "";
+                        dtrTemPd["cQcUM"] = "";
+                        dtrTemPd["cQnUM"] = "";
+                    }
+                    else
+                    {
+                        this.pmInitPopUpDialog("UM");
+                        string strOrderBy = (strCol.ToUpper() == "CQCUM" ? "CCODE" : "CNAME");
+                        e.Valid = !this.pofrmGetUM.ValidateField(strValue, strOrderBy, false);
+
+                        if (this.pofrmGetUM.PopUpResult)
+                        {
+                            e.Valid = true;
+                            this.gridView2.UpdateCurrentRow();
+                            this.pmRetrievePopUpVal("GRDVIEW2_" + strCol);
+                            e.Value = (strCol.ToUpper() == "CQCUM" ? dtrTemPd["cQcUM"].ToString().TrimEnd() : dtrTemPd["cQnUM"].ToString().TrimEnd());
+                        }
+                        else
+                        {
+                            e.Value = "";
+                            dtrTemPd["cUOM"] = "";
+                            dtrTemPd["cQcUM"] = "";
+                            dtrTemPd["cQnUM"] = "";
+                        }
+                    }
+                    break;
+
+            }
+
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            this.pmEnterForm();
+        }
+
+
+    }
+}

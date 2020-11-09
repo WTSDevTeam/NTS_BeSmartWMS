@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSKEEPLOG" targetNamespace="http://tempuri.org/DTSKEEPLOG.xsd" xmlns:mstns="http://tempuri.org/DTSKEEPLOG.xsd" xmlns="http://tempuri.org/DTSKEEPLOG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSKEEPLOG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DTSKEEPLOG" msprop:Generator_UserDSName="DTSKEEPLOG" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XRPKEEPLOG" msprop:Generator_UserTableName="XRPKEEPLOG" msprop:Generator_RowDeletedName="XRPKEEPLOGRowDeleted" msprop:Generator_TableClassName="XRPKEEPLOGDataTable" msprop:Generator_RowChangedName="XRPKEEPLOGRowChanged" msprop:Generator_RowClassName="XRPKEEPLOGRow" msprop:Generator_RowChangingName="XRPKEEPLOGRowChanging" msprop:Generator_RowEvArgName="XRPKEEPLOGRowChangeEvent" msprop:Generator_RowEvHandlerName="XRPKEEPLOGRowChangeEventHandler" msprop:Generator_TablePropName="XRPKEEPLOG" msprop:Generator_TableVarName="tableXRPKEEPLOG" msprop:Generator_RowDeletingName="XRPKEEPLOGRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DCREATE" msdata:Caption="cCode" msprop:Generator_UserColumnName="DCREATE" msprop:Generator_ColumnPropNameInRow="DCREATE" msprop:Generator_ColumnVarNameInTable="columnDCREATE" msprop:Generator_ColumnPropNameInTable="DCREATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CTYPE" msdata:Caption="cName" msprop:Generator_UserColumnName="CTYPE" msprop:Generator_ColumnPropNameInRow="CTYPE" msprop:Generator_ColumnVarNameInTable="columnCTYPE" msprop:Generator_ColumnPropNameInTable="CTYPEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CDESC" msdata:Caption="cCateg" msprop:Generator_UserColumnName="CDESC" msprop:Generator_ColumnPropNameInRow="CDESC" msprop:Generator_ColumnVarNameInTable="columnCDESC" msprop:Generator_ColumnPropNameInTable="CDESCColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CTASKNAME" msdata:Caption="cGroup" msprop:Generator_UserColumnName="CTASKNAME" msprop:Generator_ColumnPropNameInRow="CTASKNAME" msprop:Generator_ColumnVarNameInTable="columnCTASKNAME" msprop:Generator_ColumnPropNameInTable="CTASKNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CLOGINNAME" msdata:Caption="nLevel" msprop:Generator_UserColumnName="CLOGINNAME" msprop:Generator_ColumnPropNameInRow="CLOGINNAME" msprop:Generator_ColumnVarNameInTable="columnCLOGINNAME" msprop:Generator_ColumnPropNameInTable="CLOGINNAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CMACHINE" msdata:Caption="cQcAcChart" msprop:Generator_UserColumnName="CMACHINE" msprop:Generator_ColumnPropNameInRow="CMACHINE" msprop:Generator_ColumnVarNameInTable="columnCMACHINE" msprop:Generator_ColumnPropNameInTable="CMACHINEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="COLDCODE" msdata:Caption="cQnAcChart" msprop:Generator_UserColumnName="COLDCODE" msprop:Generator_ColumnPropNameInRow="COLDCODE" msprop:Generator_ColumnVarNameInTable="columnCOLDCODE" msprop:Generator_ColumnPropNameInTable="COLDCODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CCODE" msdata:Caption="cQcAcChart2" msprop:Generator_UserColumnName="CCODE" msprop:Generator_ColumnPropNameInRow="CCODE" msprop:Generator_ColumnVarNameInTable="columnCCODE" msprop:Generator_ColumnPropNameInTable="CCODEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

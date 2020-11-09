@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DTSPSTK02" targetNamespace="http://tempuri.org/DTSPSTK02.xsd" xmlns:mstns="http://tempuri.org/DTSPSTK02.xsd" xmlns="http://tempuri.org/DTSPSTK02.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DTSPSTK02" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DTSPSTK02" msprop:Generator_UserDSName="DTSPSTK02">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XRPSTK02" msprop:Generator_TableClassName="XRPSTK02DataTable" msprop:Generator_TableVarName="tableXRPSTK02" msprop:Generator_TablePropName="XRPSTK02" msprop:Generator_RowDeletingName="XRPSTK02RowDeleting" msprop:Generator_RowChangingName="XRPSTK02RowChanging" msprop:Generator_RowEvHandlerName="XRPSTK02RowChangeEventHandler" msprop:Generator_RowDeletedName="XRPSTK02RowDeleted" msprop:Generator_UserTableName="XRPSTK02" msprop:Generator_RowChangedName="XRPSTK02RowChanged" msprop:Generator_RowEvArgName="XRPSTK02RowChangeEvent" msprop:Generator_RowClassName="XRPSTK02Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QcBranch" msdata:Caption="cCode" msprop:Generator_ColumnVarNameInTable="columnQcBranch" msprop:Generator_ColumnPropNameInRow="QcBranch" msprop:Generator_ColumnPropNameInTable="QcBranchColumn" msprop:Generator_UserColumnName="QcBranch" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="QnBranch" msdata:Caption="cName" msprop:Generator_ColumnVarNameInTable="columnQnBranch" msprop:Generator_ColumnPropNameInRow="QnBranch" msprop:Generator_ColumnPropNameInTable="QnBranchColumn" msprop:Generator_UserColumnName="QnBranch" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="QcWH1" msdata:Caption="cName2" msprop:Generator_ColumnVarNameInTable="columnQcWH1" msprop:Generator_ColumnPropNameInRow="QcWH1" msprop:Generator_ColumnPropNameInTable="QcWH1Column" msprop:Generator_UserColumnName="QcWH1" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="QnWH1" msprop:Generator_ColumnVarNameInTable="columnQnWH1" msprop:Generator_ColumnPropNameInRow="QnWH1" msprop:Generator_ColumnPropNameInTable="QnWH1Column" msprop:Generator_UserColumnName="QnWH1" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="QcWH2" msdata:Caption="cCateg" msprop:Generator_ColumnVarNameInTable="columnQcWH2" msprop:Generator_ColumnPropNameInRow="QcWH2" msprop:Generator_ColumnPropNameInTable="QcWH2Column" msprop:Generator_UserColumnName="QcWH2" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="QnWH2" msprop:Generator_ColumnVarNameInTable="columnQnWH2" msprop:Generator_ColumnPropNameInRow="QnWH2" msprop:Generator_ColumnPropNameInTable="QnWH2Column" msprop:Generator_UserColumnName="QnWH2" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="Qty1" msdata:Caption="cGroup" msprop:Generator_ColumnVarNameInTable="columnQty1" msprop:Generator_ColumnPropNameInRow="Qty1" msprop:Generator_ColumnPropNameInTable="Qty1Column" msprop:Generator_UserColumnName="Qty1" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="Qty2" msdata:Caption="cQcAcChart" msprop:Generator_ColumnVarNameInTable="columnQty2" msprop:Generator_ColumnPropNameInRow="Qty2" msprop:Generator_ColumnPropNameInTable="Qty2Column" msprop:Generator_UserColumnName="Qty2" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="Total" msdata:ReadOnly="true" msdata:Expression="Qty1+Qty2" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="ReorderP1" msdata:Caption="ReOrd Point" msprop:Generator_ColumnVarNameInTable="columnReorderP1" msprop:Generator_ColumnPropNameInRow="ReorderP1" msprop:Generator_ColumnPropNameInTable="ReorderP1Column" msprop:Generator_UserColumnName="ReorderP1" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="ReorderP2" msprop:Generator_ColumnVarNameInTable="columnReorderP2" msprop:Generator_ColumnPropNameInRow="ReorderP2" msprop:Generator_ColumnPropNameInTable="ReorderP2Column" msprop:Generator_UserColumnName="ReorderP2" type="xs:decimal" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
