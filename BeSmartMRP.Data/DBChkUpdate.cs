@@ -37,46 +37,46 @@ namespace BeSmartMRP.Data
             //bllResult = bllResult && this.pmUpdate_2009_12_02(objSQLHelper);
             //bllResult = bllResult && this.pmUpdate_2009_12_07(objSQLHelper);
             //bllResult = bllResult && this.pmUpdate_2009_12_14(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_04(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_05(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_07(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_08(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_11(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_12(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_25(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_01_26(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_02_02(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_02_08(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_02_15(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_02_17(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_02_22(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_03_09(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_03_16(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_04_09(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_05_05(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_05_07(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_05_24(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_06_22(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_09_27(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2010_10_26(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2011_07_04(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2012_03_09(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2012_04_26(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2012_05_03(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2012_07_08(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2013_08_21(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2014_07_22(objSQLHelper);
-            //bllResult = bllResult && this.pmUpdate_2014_08_24(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2014_08_31(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2014_09_03(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2015_04_24(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2015_07_16(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2015_11_27(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2016_06_06(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2016_06_15(objSQLHelper);
-            bllResult = bllResult && this.pmUpdate_2016_08_19(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_04(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_05(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_07(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_08(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_11(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_12(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_25(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_01_26(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_02_02(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_02_08(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_02_15(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_02_17(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_02_22(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_03_09(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_03_16(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_04_09(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_05_05(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_05_07(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_05_24(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_06_22(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_09_27(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2010_10_26(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2011_07_04(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2012_03_09(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2012_04_26(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2012_05_03(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2012_07_08(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2013_08_21(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2014_07_22(objSQLHelper);
+            ////bllResult = bllResult && this.pmUpdate_2014_08_24(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2014_08_31(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2014_09_03(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2015_04_24(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2015_07_16(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2015_11_27(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2016_06_06(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2016_06_15(objSQLHelper);
+            //bllResult = bllResult && this.pmUpdate_2016_08_19(objSQLHelper);
 
-            //
+            bllResult = bllResult && this.pmUpdate_2020_11_09(objSQLHelper);
 
             return bllResult;
         }
@@ -1377,6 +1377,56 @@ namespace BeSmartMRP.Data
             cDBMSAgent objSQLHelper = inSQLHelper;
             pmInSertMenu_POS(inSQLHelper, "PEXTR01", "SM", "880310", "8803", "Export เอกสารของระบบ", "Export เอกสารของระบบ", "MENU", "REPORT", "");
             pmInSertMenu_POS(inSQLHelper, "PIMTR01", "SM", "880311", "8803", "Import เอกสารของระบบ", "Import เอกสารของระบบ", "MENU", "REPORT", "");
+
+            return true;
+
+        }
+
+
+        private bool pmUpdate_2020_11_09(cDBMSAgent inSQLHelper)
+        {
+
+            DataSet dtsDataEnv = new DataSet();
+            string strErrorMsg = "";
+            string strSQLStr = "";
+
+            cDBMSAgent objSQLHelper = inSQLHelper;
+
+            //pmUpdateMenuSeq(inSQLHelper, "PCOST02", "1450", "14");
+            //pmUpdateMenuSeq(inSQLHelper, "PCOST03", "1451", "14");
+            //pmUpdateMenuSeq(inSQLHelper, "EGENFGCS", "1410", "14");
+
+            //pmInSertMenu(inSQLHelper, "EMSTER01", "M2", "1401", "14", "กำหนด %R ของทราย", "กำหนด %R ของทราย", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER02", "M2", "1402", "14", "กำหนดหมวดต้นทุน", "กำหนดหมวดต้นทุน", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER03", "M2", "1403", "14", "กำหนดประเภทต้นทุน", "กำหนดประเภทต้นทุน", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER04", "M2", "1404", "14", "การจัดสรรค่าใช้จ่าย", "การจัดสรรค่าใช้จ่าย", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER05", "M2", "1405", "14", "กำหนดรายละเอียด/ค่าใช้จ่าย ตามประเภทต้นทุน", "กำหนดรายละเอียด/ค่าใช้จ่าย ตามประเภทต้นทุน", "Menu", "Input", "");
+
+
+            //pmInSertMenu(inSQLHelper, "CCST_CPAD1", "M2", "1400", "14", "บันทึกรายการ", "Transaction", "NODE", "Bar", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER11", "M2", "140001", "1400", "เพิ่ม/แก้ไข STD TIME", "เพิ่ม/แก้ไข STD TIME", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER12", "M2", "140002", "1400", "เพิ่ม/แก้ไข ปริมาณการใช้เหล็ก", "เพิ่ม/แก้ไข ปริมาณการใช้เหล็ก", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER13", "M2", "140003", "1411", "เพิ่ม/แก้ไข  Purchase - Sale Price", "เพิ่ม/แก้ไข  Purchase - Sale Price", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER14", "M2", "140004", "1411", "เพิ่ม/แก้ไข  INPUT PICKED", "เพิ่ม/แก้ไข  INPUT PICKED", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER15", "M2", "140005", "1411", "เพิ่ม/แก้ไข ยอดการผลิต", "เพิ่ม/แก้ไข ยอดการผลิต", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER16", "M2", "140006", "1411", "เพิ่ม/แก้ไข ค่าเสื่อม", "เพิ่ม/แก้ไข ค่าเสื่อม", "Menu", "Input", "");
+
+            //pmInSertMenu(inSQLHelper, "EMSTER17", "M2", "140107", "1411", "เพิ่ม/แก้ไข BOM USED", "เพิ่ม/แก้ไข BOM USED", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER18", "M2", "140108", "1411", "เพิ่ม/แก้ไข BOM PACKAGE", "เพิ่ม/แก้ไข BOM PACKAGE", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER19", "M2", "140109", "1411", "เพิ่ม/แก้ไข ราคาขายสินค้าแต่ละตัว (SALE PRICE)", "เพิ่ม/แก้ไข ราคาขายสินค้าแต่ละตัว (SALE PRICE)", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EMSTER20", "M2", "140110", "1411", "เพิ่ม/แก้ไข Exp ตาม PART", "เพิ่ม/แก้ไข Exp ตาม PART", "Menu", "Input", "");
+            //pmInSertMenu(inSQLHelper, "EPLANT", "M2", "880110", "8801", "เพิ่ม/แก้ไขโรงงาน", "เพิ่ม/แก้ไขโรงงาน", "Menu", "Input", "");
+
+            //pmInSertMenu(inSQLHelper, "PCOST04", "M2", "1452", "14", "REPORT COST BY PRODUCT", "REPORT COST BY PRODUCT", "Menu", "REPORT", "");
+
+            pmInSertMenu(inSQLHelper, "EPDCTYPE", "SM", "880204", "8802", "เพิ่ม/แก้ไข Type สินค้า/วัตถุดิบ", "เพิ่ม/แก้ไข Type สินค้า/วัตถุดิบ", "Menu", "INPUT", "");
+
+            pmInSertMenu(inSQLHelper, "PCOST05", "M2", "1453", "14", "REPORT STD TIME", "REPORT STD TIME", "Menu", "REPORT", "");
+            pmInSertMenu(inSQLHelper, "PCOST06", "M2", "1454", "14", "Status Of Material Usage", "Status Of Material Usage", "Menu", "REPORT", "");
+            pmInSertMenu(inSQLHelper, "PCOST07", "M2", "1455", "14", "Report การ Usage Sand", "Report การ Usage Sand", "Menu", "REPORT", "");
+            pmInSertMenu(inSQLHelper, "PCOST08", "M2", "1456", "14", "Report Production", "Report Production", "Menu", "REPORT", "");
+            pmInSertMenu(inSQLHelper, "PCOST09", "M2", "1457", "14", "Report DEPRE Per Unit", "Report DEPRE Per Unit", "Menu", "REPORT", "");
+            pmInSertMenu(inSQLHelper, "PCOST10", "M2", "1458", "14", "Report Expense เปรียบเทียบรายแผนก", "Report Expense เปรียบเทียบรายแผนก", "Menu", "REPORT", "");
 
             return true;
 

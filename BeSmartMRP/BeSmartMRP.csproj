@@ -382,6 +382,12 @@
     <Compile Include="DatabaseForms\frmMfgBook.Designer.cs">
       <DependentUpon>frmMfgBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseForms\frmMfgCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseForms\frmMfgCost.Designer.cs">
+      <DependentUpon>frmMfgCost.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseForms\frmMFResType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +447,12 @@
     </Compile>
     <Compile Include="DatabaseForms\frmPdCateg.Designer.cs">
       <DependentUpon>frmPdCateg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseForms\frmPdClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseForms\frmPdClass.Designer.cs">
+      <DependentUpon>frmPdClass.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseForms\frmProd.cs">
       <SubType>Form</SubType>
@@ -898,6 +910,24 @@
     <Compile Include="Transaction\Common\frmRPTSelect.Designer.cs">
       <DependentUpon>frmRPTSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transaction\frmAddCost01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAddCost01.Designer.cs">
+      <DependentUpon>frmAddCost01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAddCost02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAddCost02.Designer.cs">
+      <DependentUpon>frmAddCost02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\frmAddCost03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\frmAddCost03.Designer.cs">
+      <DependentUpon>frmAddCost03.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction\frmAdj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1090,6 +1120,9 @@
       <DependentUpon>frmMfgBook.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseForms\frmMfgCost.resx">
+      <DependentUpon>frmMfgCost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DatabaseForms\frmMFResType.resx">
       <DependentUpon>frmMFResType.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -1127,6 +1160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseForms\frmPdCateg.resx">
       <DependentUpon>frmPdCateg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseForms\frmPdClass.resx">
+      <DependentUpon>frmPdClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseForms\frmProd.resx">
       <DependentUpon>frmProd.cs</DependentUpon>
@@ -1647,6 +1683,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\dlgGetPlanOption01.resx">
       <DependentUpon>dlgGetPlanOption01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\frmAddCost01.resx">
+      <DependentUpon>frmAddCost01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\frmAddCost02.resx">
+      <DependentUpon>frmAddCost02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\frmAddCost03.resx">
+      <DependentUpon>frmAddCost03.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\frmAdj.resx">
       <DependentUpon>frmAdj.cs</DependentUpon>

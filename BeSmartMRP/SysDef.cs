@@ -363,6 +363,12 @@ namespace BeSmartMRP
         public static string gc_RESOURCE_TYPE_MACHINE = "M";    //เครื่องจักร
         public static string gc_RESOURCE_TYPE_TOOL = "T";    //เครื่องมือ
 
+        public static string gc_RESOURCE_TYPE_COSTM1 = "C";    //กำหนด %R ของทราย
+        public static string gc_RESOURCE_TYPE_COSTM2 = "D";    //กำหนดหมวดต้นทุน
+        public static string gc_RESOURCE_TYPE_COSTM3 = "E";    //กำหนดประเภทต้นทุน
+        public static string gc_RESOURCE_TYPE_COSTM4 = "F";    //การจัดสรรค่าใช้จ่าย
+        public static string gc_RESOURCE_TYPE_COSTM5 = "G";    //กำหนดรายละเอียด/ค่าใช้จ่าย ตามประเภทต้นทุน
+
         public static string gc_PROCURE_TYPE_PURCHASE = "P";	//จากการซื้อ
         public static string gc_PROCURE_TYPE_MANUFACURING = "M";	//จากการผลิตเอง
         public static string gc_PROCURE_TYPE_SUBCONTRACT = "S";	//จากการจ้างทำ

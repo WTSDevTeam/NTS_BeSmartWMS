@@ -229,7 +229,7 @@ namespace BeSmartMRP.Business.Entity
 
     public enum MfgResourceType
     {
-        Machine, Tool
+        Machine, Tool, CostM1, CostM2, CostM3, CostM4, CostM5
     }
 
 }

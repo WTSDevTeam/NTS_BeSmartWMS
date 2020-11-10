@@ -264,9 +264,8 @@ namespace BeSmartMRP
                     ofrmCorp.Activate();
                     break;
                 case "EBRANCH":
-                    //DatabaseForms.frmBranch ofrmBranch = BeSmartMRP.DatabaseForms.frmBranch.GetInstanse();
-                    DatabaseForms.frmEMPlant ofrmBranch = BeSmartMRP.DatabaseForms.frmEMPlant.GetInstanse();
-
+                    DatabaseForms.frmBranch ofrmBranch = BeSmartMRP.DatabaseForms.frmBranch.GetInstanse();
+                    
                     ofrmBranch.MdiParent = this;
                     ofrmBranch.Show();
                     ofrmBranch.Activate();
@@ -424,6 +423,41 @@ namespace BeSmartMRP
                     ofrmResM2.MdiParent = this;
                     ofrmResM2.Show();
                     ofrmResM2.Activate();
+                    break;
+
+                case "EMSTER01":
+                    DatabaseForms.frmMfgCost ofrmResMP = BeSmartMRP.DatabaseForms.frmMfgCost.GetInstanse(MfgResourceType.CostM1);
+                    ofrmResMP.MdiParent = this;
+                    ofrmResMP.Show();
+                    ofrmResMP.Activate();
+                    break;
+
+                case "EMSTER02":
+                    DatabaseForms.frmMfgCost ofrmResMQ = BeSmartMRP.DatabaseForms.frmMfgCost.GetInstanse(MfgResourceType.CostM2);
+                    ofrmResMQ.MdiParent = this;
+                    ofrmResMQ.Show();
+                    ofrmResMQ.Activate();
+                    break;
+
+                case "EMSTER03":
+                    DatabaseForms.frmMfgCost ofrmResME = BeSmartMRP.DatabaseForms.frmMfgCost.GetInstanse(MfgResourceType.CostM3);
+                    ofrmResME.MdiParent = this;
+                    ofrmResME.Show();
+                    ofrmResME.Activate();
+                    break;
+
+                case "EMSTER04":
+                    DatabaseForms.frmMfgCost ofrmResMF = BeSmartMRP.DatabaseForms.frmMfgCost.GetInstanse(MfgResourceType.CostM4);
+                    ofrmResMF.MdiParent = this;
+                    ofrmResMF.Show();
+                    ofrmResMF.Activate();
+                    break;
+
+                case "EMSTER05":
+                    DatabaseForms.frmMfgCost ofrmResMG = BeSmartMRP.DatabaseForms.frmMfgCost.GetInstanse(MfgResourceType.CostM5);
+                    ofrmResMG.MdiParent = this;
+                    ofrmResMG.Show();
+                    ofrmResMG.Activate();
                     break;
 
                 case "ESTDOPR":
@@ -961,6 +995,31 @@ namespace BeSmartMRP
                     ofrmReport01.MdiParent = this;
                     ofrmReport01.Show();
                     ofrmReport01.Activate();
+                    break;
+
+                case "EMSTER11":
+                    Transaction.frmAddCost01 ofrmAddCost01 = new Transaction.frmAddCost01();
+                    ofrmAddCost01.Show();
+                    break;
+                case "EMSTER12":
+                    Transaction.frmAddCost02 ofrmAddCost02 = new Transaction.frmAddCost02();
+                    ofrmAddCost02.Show();
+                    break;
+                case "EMSTER13":
+                    Transaction.frmAddCost03 ofrmAddCost03 = new Transaction.frmAddCost03();
+                    ofrmAddCost03.Show();
+                    break;
+                case "EMSTER14":
+                    Transaction.frmAddCost01 ofrmAddCost04 = new Transaction.frmAddCost01();
+                    ofrmAddCost04.Show();
+                    break;
+                case "EMSTER15":
+                    Transaction.frmAddCost01 ofrmAddCost05 = new Transaction.frmAddCost01();
+                    ofrmAddCost05.Show();
+                    break;
+                case "EMSTER16":
+                    Transaction.frmAddCost01 ofrmAddCost06 = new Transaction.frmAddCost01();
+                    ofrmAddCost06.Show();
                     break;
 
                 case "CHGPWD":
@@ -1576,6 +1635,61 @@ namespace BeSmartMRP
                     orptXRSTCARD21.MdiParent = this;
                     orptXRSTCARD21.Show();
                     orptXRSTCARD21.Activate();
+                    break;
+
+                case "PCOST04":
+                    Report.rptPCost03 orptPCost04 = new Report.rptPCost03("FORM3");
+                    orptPCost04.SetTitle(inTag, strReportName, inTag);
+                    orptPCost04.MdiParent = this;
+                    orptPCost04.Show();
+                    orptPCost04.Activate();
+                    break;
+
+                case "PCOST05":
+                    Report.rptPCost03 orptPCost05 = new Report.rptPCost03("FORM3");
+                    orptPCost05.SetTitle(inTag, strReportName, inTag);
+                    orptPCost05.MdiParent = this;
+                    orptPCost05.Show();
+                    orptPCost05.Activate();
+                    break;
+                case "PCOST06":
+                    Report.rptPCost03 orptPCost06 = new Report.rptPCost03("FORM3");
+                    orptPCost06.SetTitle(inTag, strReportName, inTag);
+                    orptPCost06.MdiParent = this;
+                    orptPCost06.Show();
+                    orptPCost06.Activate();
+                    break;
+
+                case "PCOST07":
+                    Report.rptPCost03 orptPCost07 = new Report.rptPCost03("FORM3");
+                    orptPCost07.SetTitle(inTag, strReportName, inTag);
+                    orptPCost07.MdiParent = this;
+                    orptPCost07.Show();
+                    orptPCost07.Activate();
+                    break;
+
+                case "PCOST08":
+                    Report.rptPCost03 orptPCost08 = new Report.rptPCost03("FORM3");
+                    orptPCost08.SetTitle(inTag, strReportName, inTag);
+                    orptPCost08.MdiParent = this;
+                    orptPCost08.Show();
+                    orptPCost08.Activate();
+                    break;
+
+                case "PCOST09":
+                    Report.rptPCost03 orptPCost09 = new Report.rptPCost03("FORM3");
+                    orptPCost09.SetTitle(inTag, strReportName, inTag);
+                    orptPCost09.MdiParent = this;
+                    orptPCost09.Show();
+                    orptPCost09.Activate();
+                    break;
+
+                case "PCOST10":
+                    Report.rptPCost03 orptPCost10 = new Report.rptPCost03("FORM3");
+                    orptPCost10.SetTitle(inTag, strReportName, inTag);
+                    orptPCost10.MdiParent = this;
+                    orptPCost10.Show();
+                    orptPCost10.Activate();
                     break;
 
             }

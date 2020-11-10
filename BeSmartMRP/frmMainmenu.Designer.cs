@@ -81,6 +81,7 @@ namespace BeSmartMRP
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup6 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navStmove_FR = new DevExpress.XtraNavBar.NavBarItem();
@@ -98,7 +99,6 @@ namespace BeSmartMRP
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.docLeftPanel.SuspendLayout();
@@ -366,6 +366,7 @@ namespace BeSmartMRP
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(605, 80);
             this.panel4.TabIndex = 24;
+            this.panel4.Visible = false;
             // 
             // pictureEdit4
             // 
@@ -429,6 +430,7 @@ namespace BeSmartMRP
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(605, 85);
             this.panel3.TabIndex = 23;
+            this.panel3.Visible = false;
             // 
             // pictureEdit3
             // 
@@ -493,6 +495,7 @@ namespace BeSmartMRP
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(605, 75);
             this.panel2.TabIndex = 22;
+            this.panel2.Visible = false;
             // 
             // pictureEdit2
             // 
@@ -556,6 +559,7 @@ namespace BeSmartMRP
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(605, 75);
             this.panel1.TabIndex = 19;
+            this.panel1.Visible = false;
             // 
             // pictureEdit1
             // 
@@ -620,6 +624,7 @@ namespace BeSmartMRP
             this.lblHeader01.Size = new System.Drawing.Size(168, 33);
             this.lblHeader01.TabIndex = 18;
             this.lblHeader01.Text = "เริ่มการทำงาน";
+            this.lblHeader01.Visible = false;
             // 
             // lblVersionDate
             // 
@@ -732,6 +737,13 @@ namespace BeSmartMRP
             this.navBarItem1.Caption = "หน้าหลัก";
             this.navBarItem1.ImageOptions.LargeImage = global::BeSmartMRP.Properties.Resources.box_front;
             this.navBarItem1.Name = "navBarItem1";
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Dashboard";
+            this.navBarItem2.ImageOptions.LargeImage = global::BeSmartMRP.Properties.Resources.chart_pie_alternative;
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.Visible = false;
             // 
             // navBarGroupControlContainer1
             // 
@@ -851,12 +863,6 @@ namespace BeSmartMRP
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Caption = "Dashboard";
-            this.navBarItem2.ImageOptions.LargeImage = global::BeSmartMRP.Properties.Resources.chart_pie_alternative;
-            this.navBarItem2.Name = "navBarItem2";
             // 
             // frmMainmenu
             // 

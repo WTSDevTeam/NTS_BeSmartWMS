@@ -1,4 +1,6 @@
 
+#define xd_RUNMODE_DEBUG
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,122 +8,24 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 using WS.Data;
 using WS.Data.Agents;
 using AppUtil;
 
-using mBudget.Business.Entity;
-using mBudget.UIHelper;
-using mBudget.Business.Agents;
+using BeSmartMRP.Business.Entity;
+using BeSmartMRP.UIHelper;
+using BeSmartMRP.Business.Agents;
+using BeSmartMRP.Business.Component;
 
-namespace mBudget.DatabaseForms
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.Utils;
+
+namespace BeSmartMRP.DatabaseForms
 {
     public partial class frmPdClass : UIHelper.frmBase
     {
-
-        /// <summary>
-        /// Class for Search Dialog
-        /// </summary>
-        #region "Search Dialog Class"
-        private class cfrmSearchData : DialogForms.cfrmSearchBase
-        {
-
-            private QMasterUM mobjTabRefer = null;
-            private string mstrRowID = "";
-            private string mstrCode = "";
-
-            public cfrmSearchData() { }
-
-            override protected void OnInitComponent()
-            {
-                this.mobjTabRefer = new QMasterUM(App.ConnectionString, App.DatabaseReside);
-
-                this.AddSearchKey("รหัส", "CCODE");
-                this.AddSearchKey("ชื่อ", "CNAME");
-                base.OnInitComponent();
-
-                this.mstrSearchVal = "";
-                this.mstrSearchKey = "CCODE";
-                this.pmSetBrowView();
-                this.pmInitGridProp();
-            }
-
-            override protected void OnSearch(string inSearchVal, string inKey)
-            {
-                //this.mstrSearchVal = inSearchVal;
-                this.mstrSearchVal = (inSearchVal != string.Empty ? "%" + inSearchVal + "%" : inSearchVal);
-                this.mstrSearchKey = inKey;
-
-                this.pmSetBrowView();
-                this.pmRefreshBrowView();
-                base.OnSearch(inSearchVal, inKey);
-            }
-
-            override protected void OnSelected()
-            {
-                base.OnSelected();
-                this.pmSetSelectedItem();
-            }
-
-            private void pmSetSelectedItem()
-            {
-                DataRow dtrBrow = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
-                if (dtrBrow != null)
-                {
-                    this.mstrRowID = dtrBrow["cRowID"].ToString();
-                    this.mstrCode = dtrBrow["cCode"].ToString();
-                }
-            }
-
-            public string RowID
-            {
-                get { return this.mstrRowID; }
-            }
-
-            public string Code
-            {
-                get { return this.mstrCode; }
-            }
-
-            public string SearchKey
-            {
-                get { return this.mstrSearchKey; }
-            }
-
-            private void pmSetBrowView()
-            {
-                DataTable dtrBrowView = new DataTable();
-                dtrBrowView = this.mobjTabRefer.QueryData(new object[] { this.mstrSearchVal }, this.mstrSearchKey, this.mstrBrowViewAlias);
-                if (this.dtsDataEnv.Tables[this.mstrBrowViewAlias] != null)
-                    this.dtsDataEnv.Tables.Remove(this.mstrBrowViewAlias);
-
-                this.dtsDataEnv.Tables.Add(dtrBrowView);
-            }
-
-            private void pmInitGridProp()
-            {
-                this.grdBrowView.DataSource = this.dtsDataEnv.Tables[this.mstrBrowViewAlias];
-
-                this.gridView1.SortInfo.Add(this.gridView1.Columns[this.mstrSearchKey], DevExpress.Data.ColumnSortOrder.Ascending);
-                this.gridView1.Columns["CROWID"].Visible = false;
-                this.gridView1.Columns["CCODE"].Caption = "รหัส";
-                this.gridView1.Columns["CNAME"].Caption = "ชื่อ";
-                this.gridView1.Columns["CNAME2"].Caption = "ชื่อภาษา 2";
-
-                this.gridView1.Columns["CCODE"].Width = 30;
-            }
-
-            private void pmRefreshBrowView()
-            {
-                this.pmSetBrowView();
-                this.grdBrowView.DataSource = this.dtsDataEnv.Tables[this.mstrBrowViewAlias];
-                if (this.gridView1.RowCount > 0)
-                    this.gridView1.FocusedRowHandle = 0;
-            }
-        }
-        #endregion
-
 
         public static string TASKNAME = "EPDCLASS";
 
@@ -374,6 +278,7 @@ namespace mBudget.DatabaseForms
             }
         }
 
+
         private void barMainEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (e.Item.Tag != null)
@@ -386,7 +291,7 @@ namespace mBudget.DatabaseForms
                         this.pmEnterForm();
                         break;
                     case WsToolBar.Insert:
-                        if (App.PermissionManager.CheckPermission(AuthenType.CanInsert, App.AppUserID, TASKNAME))
+                        if (App.PermissionManager.CheckPermission(TASKNAME, AuthenType.CanInsert, App.AppUserName, App.AppUserID))
                         {
                             this.mFormEditMode = UIHelper.AppFormState.Insert;
                             this.pmLoadEditPage();
@@ -396,7 +301,7 @@ namespace mBudget.DatabaseForms
 
                         break;
                     case WsToolBar.Update:
-                        if (App.PermissionManager.CheckPermission(AuthenType.CanEdit, App.AppUserID, TASKNAME))
+                        if (App.PermissionManager.CheckPermission(TASKNAME, AuthenType.CanEdit, App.AppUserName, App.AppUserID))
                         {
                             this.mFormEditMode = UIHelper.AppFormState.Edit;
                             this.pmLoadEditPage();
@@ -406,7 +311,7 @@ namespace mBudget.DatabaseForms
 
                         break;
                     case WsToolBar.Delete:
-                        if (App.PermissionManager.CheckPermission(AuthenType.CanDelete, App.AppUserID, TASKNAME))
+                        if (App.PermissionManager.CheckPermission(TASKNAME, AuthenType.CanDelete, App.AppUserName, App.AppUserID))
                         {
                             this.pmDeleteData();
                         }
@@ -431,6 +336,7 @@ namespace mBudget.DatabaseForms
 
             }
         }
+
 
         private void pmDeleteData()
         {
@@ -535,22 +441,22 @@ namespace mBudget.DatabaseForms
 
         private void pmSearchData()
         {
-            using (cfrmSearchData dlg = new cfrmSearchData())
-            {
-                dlg.ShowDialog();
-                if (dlg.DialogResult == DialogResult.OK
-                    && dlg.Code != null)
-                {
+            //using (cfrmSearchData dlg = new cfrmSearchData())
+            //{
+            //    dlg.ShowDialog();
+            //    if (dlg.DialogResult == DialogResult.OK
+            //        && dlg.Code != null)
+            //    {
 
-                    this.pmSetSortKey(dlg.SearchKey, true);
+            //        this.pmSetSortKey(dlg.SearchKey, true);
 
-                    int intSeekRow = this.gridView1.LocateByValue(0, this.gridView1.Columns["CCODE"], dlg.Code);
-                    if (intSeekRow > -1 && intSeekRow <= this.gridView1.RowCount)
-                    {
-                        this.gridView1.FocusedRowHandle = intSeekRow;
-                    }
-                }
-            }
+            //        int intSeekRow = this.gridView1.LocateByValue(0, this.gridView1.Columns["CCODE"], dlg.Code);
+            //        if (intSeekRow > -1 && intSeekRow <= this.gridView1.RowCount)
+            //        {
+            //            this.gridView1.FocusedRowHandle = intSeekRow;
+            //        }
+            //    }
+            //}
         }
 
 

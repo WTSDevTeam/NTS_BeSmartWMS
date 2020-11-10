@@ -1,4 +1,4 @@
-namespace mBudget.DatabaseForms
+namespace BeSmartMRP.DatabaseForms
 {
     partial class frmPdClass
     {
@@ -138,7 +138,7 @@ namespace mBudget.DatabaseForms
             // 
             this.xtraTabPage1.Controls.Add(this.txtFooter);
             this.xtraTabPage1.Controls.Add(this.grdBrowView);
-            this.xtraTabPage1.Image = global::mBudget.Properties.Resources.text_rich;
+            this.xtraTabPage1.Image = global::BeSmartMRP.Properties.Resources.text_rich;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(582, 357);
             this.xtraTabPage1.Text = "Browse Page";
@@ -199,7 +199,6 @@ namespace mBudget.DatabaseForms
             this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
-            this.gridView1.OptionsView.ShowFilterPanel = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
@@ -215,7 +214,7 @@ namespace mBudget.DatabaseForms
             this.xtraTabPage2.Controls.Add(this.label1);
             this.xtraTabPage2.Controls.Add(this.txtCode);
             this.xtraTabPage2.Controls.Add(this.lblCode);
-            this.xtraTabPage2.Image = global::mBudget.Properties.Resources.text_rich;
+            this.xtraTabPage2.Image = global::BeSmartMRP.Properties.Resources.text_rich;
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(582, 357);
             this.xtraTabPage2.Text = "Detail Page";
